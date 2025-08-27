@@ -198,6 +198,7 @@
       .breadcrumb-container {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
 
       .breadcrumb a {
@@ -376,6 +377,7 @@
       .faq-container {
         max-width: 800px;
         margin: 0 auto;
+        text-align: left;
       }
 
       .faq-item {
@@ -398,6 +400,7 @@
 
       .faq-question:hover {
         background-color: var(--light-gray);
+        color: var(--primary);
       }
 
       .faq-question i {
@@ -480,6 +483,7 @@
 
       .footer-links li {
         margin-bottom: 10px;
+        text-align: left;
       }
 
       .footer-links a {
@@ -579,8 +583,25 @@
 
       /* Responsive Styles */
       @media (max-width: 992px) {
-        .contact-hero-content h1 {
-          font-size: 2.5rem;
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+          align-items: center;
+          text-align: center;
+        }
+
+        .contact-item {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .contact-icon {
+          margin-bottom: 15px;
         }
       }
 
@@ -659,6 +680,10 @@
 
         .section-title h2 {
           font-size: 2rem;
+        }
+
+        .contact-item {
+          padding: 15px;
         }
       }
 
@@ -1008,11 +1033,11 @@
           <div class="footer-links">
             <h3>Services</h3>
             <ul>
-              <li><a href="#">Pharmaceutical Products</a></li>
-              <li><a href="#">Medical Equipment</a></li>
-              <li><a href="#">Medical Devices</a></li>
-              <li><a href="#">Consultancy</a></li>
-              <li><a href="#">Wholesale & Supply</a></li>
+              <li><a href="services.html">Pharmaceutical Products</a></li>
+              <li><a href="services.html">Medical Equipment</a></li>
+              <li><a href="services.html">Medical Devices</a></li>
+              <li><a href="services.html">Consultancy</a></li>
+              <li><a href="services.html">Wholesale & Supply</a></li>
             </ul>
           </div>
 
@@ -1120,16 +1145,16 @@
               if (response.ok) {
                 // Show success popup
                 $("body").append(`
-                <div class="form-popup-overlay">
-                  <div class="form-popup">
-                    <div class="form-popup-content">
-                      <h3>Thank You for Your Message!</h3>
-                      <p>We have received your inquiry and the Konacare team will reply to you shortly.</p>
-                      <button class="btn popup-close">OK</button>
+                  <div class="form-popup-overlay">
+                    <div class="form-popup">
+                      <div class="form-popup-content">
+                        <h3>Thank You for Your Message!</h3>
+                        <p>We have received your inquiry and the Konacare team will reply to you shortly.</p>
+                        <button class="btn popup-close">OK</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              `);
+                `);
                 form.trigger("reset");
               } else {
                 throw new Error("Form submission failed");
@@ -1138,16 +1163,16 @@
             .catch((error) => {
               // Show error popup
               $("body").append(`
-              <div class="form-popup-overlay">
-                <div class="form-popup">
-                  <div class="form-popup-content">
-                    <h3>Submission Error</h3>
-                    <p>Sorry, there was a problem sending your message. Please try again or contact us directly at info@konacarelimited.com.</p>
-                    <button class="btn popup-close">OK</button>
+                <div class="form-popup-overlay">
+                  <div class="form-popup">
+                    <div class="form-popup-content">
+                      <h3>Submission Error</h3>
+                      <p>Sorry, there was a problem sending your message. Please try again or contact us directly at info@konacarelimited.com.</p>
+                      <button class="btn popup-close">OK</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `);
+              `);
             })
             .finally(() => {
               // Reset button state
