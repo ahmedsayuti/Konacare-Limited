@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konacare Limited - Pharmaceutical & Medical Equipment</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0066cc;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--primary);
+        margin-left: 10px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Hero Slider Section */
+      .hero-slider {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slide.active {
+        opacity: 1;
+      }
+
+      .slide::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .slide-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .slide-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-news {
+        background-color: var(--accent);
+      }
+
+      .btn-news:hover {
+        background-color: #008c44;
+      }
+
+      .slider-nav {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 3;
+      }
+
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .slider-dot.active {
+        background: white;
+      }
+
+      .slider-arrows {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        z-index: 3;
+        transform: translateY(-50%);
+      }
+
+      .arrow {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .arrow:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Services Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        background-color: var(--primary);
+        color: white;
+        font-size: 2.5rem;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .service-content {
+        padding: 25px;
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--light);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      /* Products Section */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.1);
+      }
+
+      .product-content {
+        padding: 20px;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: var(--light);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        background-color: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .about-image,
+        .about-text {
+          flex: none;
+          width: 100%;
+        }
+
+        .slide-content h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%; /* Start off-screen to the right */
+          width: 33.33%; /* One third of the screen */
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .hero-slider {
+          margin-top: 70px;
+        }
+
+        .slide-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .slide-content p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          display: block;
+          margin: 10px auto;
+          width: 80%;
+        }
+
+        .arrow {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+
+        .slider-nav {
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slide-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .slide-content p {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .nav-menu {
+          width: 80%; /* On very small screens, use 80% width */
+          right: -80%;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <div class="logo-text">Konacare</div>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="home">
+      <!-- Slide 1 -->
+      <div
+        class="slide active"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Quality Healthcare Solutions for Ghana</h1>
+          <p>
+            Konacare Limited provides premium pharmaceutical products, medical
+            equipment, and consultancy services to healthcare providers across
+            Ghana.
+          </p>
+          <a href="#news" class="btn">Latest News</a>
+          <a href="#services" class="btn btn-news">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Advanced Medical Equipment</h1>
+          <p>
+            We supply state-of-the-art medical equipment from world-leading
+            manufacturers to healthcare facilities nationwide.
+          </p>
+          <a href="#news" class="btn">Industry News</a>
+          <a href="#products" class="btn btn-news">Our Products</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Pharmaceutical Excellence</h1>
+          <p>
+            Our pharmaceutical products meet the highest standards of quality
+            and efficacy for patient care.
+          </p>
+          <a href="#news" class="btn">Pharma News</a>
+          <a href="#contact" class="btn btn-news">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Expert Healthcare Consultancy</h1>
+          <p>
+            Our team of experienced professionals provides strategic guidance to
+            optimize healthcare delivery.
+          </p>
+          <a href="#news" class="btn">Consultancy News</a>
+          <a href="#about" class="btn btn-news">About Us</a>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Innovative Medical Devices</h1>
+          <p>
+            Discover our range of cutting-edge medical devices designed to
+            improve patient outcomes.
+          </p>
+          <a href="#news" class="btn">Device News</a>
+          <a href="#products" class="btn btn-news">View Products</a>
+        </div>
+      </div>
+
+      <!-- Slider Navigation -->
+      <div class="slider-nav">
+        <div class="slider-dot active" data-slide="0"></div>
+        <div class="slider-dot" data-slide="1"></div>
+        <div class="slider-dot" data-slide="2"></div>
+        <div class="slider-dot" data-slide="3"></div>
+        <div class="slider-dot" data-slide="4"></div>
+      </div>
+
+      <!-- Slider Arrows -->
+      <div class="slider-arrows">
+        <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
+        <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>Comprehensive healthcare solutions tailored to your needs</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-pills"></i>
+            </div>
+            <div class="service-content">
+              <h3>Pharmaceutical Products</h3>
+              <p>
+                We supply a wide range of quality pharmaceutical products from
+                trusted manufacturers worldwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <div class="service-content">
+              <h3>Medical Equipment</h3>
+              <p>
+                State-of-the-art medical equipment for hospitals, clinics, and
+                healthcare facilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="service-content">
+              <h3>Medical Devices</h3>
+              <p>
+                Innovative medical devices that enhance patient care and improve
+                treatment outcomes.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="service-content">
+              <h3>Consultancy</h3>
+              <p>
+                Expert consultancy services to optimize healthcare delivery and
+                operational efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Konacare</h2>
+          <p>Your trusted partner in healthcare</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+              alt="Konacare Team"
+            />
+          </div>
+          <div class="about-text">
+            <h3>Leading Healthcare Supplier in Ghana</h3>
+            <p>
+              Konacare Limited is a premier supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana. With years of
+              experience in the healthcare industry, we have established
+              ourselves as a trusted partner for hospitals, clinics, and
+              healthcare providers across the country.
+            </p>
+            <p>
+              Our mission is to enhance healthcare delivery in Ghana by
+              providing quality products, reliable services, and expert
+              consultancy. We work with reputable manufacturers and suppliers
+              from around the world to ensure that our clients have access to
+              the latest advancements in medical technology.
+            </p>
+            <p>
+              At Konacare, we are committed to excellence, integrity, and
+              customer satisfaction. Our team of experienced professionals is
+              dedicated to understanding your needs and providing tailored
+              solutions that meet your specific requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Products</h2>
+          <p>Quality healthcare products from trusted brands</p>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80"
+                alt="Pharmaceutical Products"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Pharmaceuticals</h3>
+              <p>
+                We offer a wide range of prescription drugs, over-the-counter
+                medications, and health supplements.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Medical Equipment"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Medical Equipment</h3>
+              <p>
+                From diagnostic tools to surgical instruments, we supply
+                high-quality medical equipment.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                alt="Medical Devices"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Medical Devices</h3>
+              <p>
+                Innovative medical devices that improve patient care and
+                treatment outcomes.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+                alt="Healthcare Solutions"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Healthcare Solutions</h3>
+              <p>
+                Comprehensive healthcare solutions tailored to meet the needs of
+                our clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us for all your healthcare needs</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h3>Location</h3>
+                <p>123 Healthcare Avenue, Accra, Ghana</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h3>Phone</h3>
+                <p>+233 24 123 4567</p>
+                <p>+233 20 987 6543</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>info@konacare.com</p>
+                <p>sales@konacare.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Pharmaceutical Products</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on("click", function (e) {
+          if ($(this).attr("href") === "#") return;
+
+          e.preventDefault();
+
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top - 80,
+            },
+            500,
+            "linear"
+          );
+        });
+
+        // Hero Slider functionality
+        let currentSlide = 0;
+        const slides = $(".slide");
+        const dots = $(".slider-dot");
+        const totalSlides = slides.length;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+          // Remove active class from all slides and dots
+          slides.removeClass("active");
+          dots.removeClass("active");
+
+          // Add active class to current slide and dot
+          slides.eq(index).addClass("active");
+          dots.eq(index).addClass("active");
+
+          currentSlide = index;
+        }
+
+        // Next slide function
+        function nextSlide() {
+          let next = currentSlide + 1;
+          if (next >= totalSlides) {
+            next = 0;
+          }
+          showSlide(next);
+        }
+
+        // Auto advance slides
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Click on dots
+        dots.on("click", function () {
+          clearInterval(slideInterval);
+          let slideIndex = $(this).data("slide");
+          showSlide(slideIndex);
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Click on arrows
+        $(".arrow.next").on("click", function () {
+          clearInterval(slideInterval);
+          nextSlide();
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        $(".arrow.prev").on("click", function () {
+          clearInterval(slideInterval);
+          let prev = currentSlide - 1;
+          if (prev < 0) {
+            prev = totalSlides - 1;
+          }
+          showSlide(prev);
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Pause slider on hover
+        $(".hero-slider").hover(
+          function () {
+            clearInterval(slideInterval);
+          },
+          function () {
+            slideInterval = setInterval(nextSlide, 5000);
+          }
+        );
+
+        // Form submission
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message. We will get back to you soon!");
+          $(this).trigger("reset");
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+          $(".service-card, .product-card").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>
