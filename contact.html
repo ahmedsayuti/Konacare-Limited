@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Konacare Limited</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Hero Section */
+      .contact-hero {
+        height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
+      }
+
+      .contact-hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .contact-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .contact-hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        background-color: var(--light);
+        padding: 15px 0;
+        margin-bottom: 40px;
+      }
+
+      .breadcrumb-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--secondary);
+      }
+
+      .breadcrumb span {
+        margin: 0 10px;
+        color: var(--gray);
+      }
+
+      /* Contact Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-icon {
+        background-color: var(--primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .contact-details h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .contact-details p {
+        color: var(--gray);
+        margin-bottom: 5px;
+      }
+
+      .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        font-size: 16px;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(239, 90, 132, 0.1);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Map Section */
+      .map-section {
+        padding: 0 0 80px;
+      }
+
+      .map-container {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 400px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        background-color: var(--light);
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .faq-question {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: var(--light-gray);
+      }
+
+      .faq-question i {
+        transition: transform 0.3s;
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 0 20px 20px;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      .fa-spinner {
+        margin-right: 8px;
+      }
+
+      /* Form Popup Styles */
+      .form-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .form-popup {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .form-popup-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .form-popup-content p {
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .popup-close {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .popup-close:hover {
+        background-color: var(--secondary);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .contact-hero-content h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%;
+          width: 33.33%;
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .contact-hero {
+          margin-top: 70px;
+          height: 50vh;
+        }
+
+        .contact-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .contact-hero-content p {
+          font-size: 1rem;
+        }
+
+        .contact-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .contact-icon {
+          margin-bottom: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .contact-hero-content p {
+          font-size: 0.9rem;
+        }
+
+        .nav-menu {
+          width: 80%;
+          right: -80%;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="container contact-hero-content">
+        <h1>Get In Touch With Us</h1>
+        <p>
+          We're here to answer your questions and provide the healthcare
+          solutions you need
+        </p>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container breadcrumb-container">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact Us</span>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Reach out to us for any inquiries or support</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>
+                  H/No. B489/14 Kaneshie First light, Afadjato Close - Accra,
+                  Accra, Ghana
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+233 20 181 8195</p>
+                <p>+233 54 152 1002</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>info@konacarelimited.com</p>
+                <p>sales@konacarelimited.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/mvgakjww"
+              method="POST"
+            >
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="_subject"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Location</h2>
+          <p>Find us easily with the map below</p>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7685312966087!2d-0.13367702656667513!3d5.6011745331969935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf85002c15cbbf%3A0xa1ba040430e91349!2sYAC%20GROUP!5e0!3m2!1sen!2sgh!4v1745158640118!5m2!1sen!2sgh"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to common questions</p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What are your business hours?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our business hours are Monday to Friday from 8:00 AM to 5:00 PM,
+                and Saturdays from 9:00 AM to 1:00 PM. We are closed on Sundays
+                and public holidays.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I place an order for products?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                You can place an order by calling our sales team at +233 20 181
+                8195 or by sending an email to sales@konacarelimited.com. Our
+                representatives will guide you through the ordering process.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do you offer delivery services?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer delivery services across Ghana. Delivery times and
+                fees may vary depending on your location and the size of your
+                order. Contact us for specific details.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What types of payment do you accept?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We accept various payment methods including bank transfers,
+                mobile money, and cash. For large orders, we may require a
+                deposit before processing.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span
+                >How can I get technical support for medical equipment?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                For technical support, please contact our service department at
+                +233 54 152 1002 or email info@konacarelimited.com. We provide
+                maintenance and repair services for all equipment we supply.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Pharmaceutical Products</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on("click", function (e) {
+          if ($(this).attr("href") === "#") return;
+
+          e.preventDefault();
+
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top - 80,
+            },
+            500,
+            "linear"
+          );
+        });
+
+        // FAQ accordion functionality
+        $(".faq-question").click(function () {
+          $(this).parent().toggleClass("active");
+          $(this).parent().siblings().removeClass("active");
+        });
+
+        // Form submission
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault();
+          var form = $(this);
+          var submitBtn = form.find('button[type="submit"]');
+
+          // Show loading state
+          var originalText = submitBtn.html();
+          submitBtn
+            .html('<i class="fas fa-spinner fa-spin"></i> Sending...')
+            .prop("disabled", true);
+
+          // Create FormData object
+          var formData = new FormData();
+          formData.append("name", $("#name").val());
+          formData.append("email", $("#email").val());
+          formData.append("phone", $("#phone").val());
+          formData.append("_subject", $("#subject").val());
+          formData.append("message", $("#message").val());
+
+          // Add Formspree-specific fields
+          formData.append("_format", "plain");
+          formData.append("_replyto", $("#email").val());
+          formData.append("_next", window.location.href);
+
+          // Submit the form to Formspree using fetch API
+          fetch(form.attr("action"), {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                // Show success popup
+                $("body").append(`
+                <div class="form-popup-overlay">
+                  <div class="form-popup">
+                    <div class="form-popup-content">
+                      <h3>Thank You for Your Message!</h3>
+                      <p>We have received your inquiry and the Konacare team will reply to you shortly.</p>
+                      <button class="btn popup-close">OK</button>
+                    </div>
+                  </div>
+                </div>
+              `);
+                form.trigger("reset");
+              } else {
+                throw new Error("Form submission failed");
+              }
+            })
+            .catch((error) => {
+              // Show error popup
+              $("body").append(`
+              <div class="form-popup-overlay">
+                <div class="form-popup">
+                  <div class="form-popup-content">
+                    <h3>Submission Error</h3>
+                    <p>Sorry, there was a problem sending your message. Please try again or contact us directly at info@konacarelimited.com.</p>
+                    <button class="btn popup-close">OK</button>
+                  </div>
+                </div>
+              </div>
+            `);
+            })
+            .finally(() => {
+              // Reset button state
+              submitBtn.html(originalText).prop("disabled", false);
+            });
+        });
+
+        // Close the popup when clicked
+        $(document).on(
+          "click",
+          ".popup-close, .form-popup-overlay",
+          function () {
+            $(".form-popup-overlay").remove();
+          }
+        );
+
+        // Animation on scroll
+        function animateOnScroll() {
+          $(".contact-item, .contact-form, .faq-item").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>

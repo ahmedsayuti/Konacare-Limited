@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Konacare Limited</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* About Hero Section */
+      .about-hero {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+        margin-top: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+      }
+
+      .about-hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .about-hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .about-hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-news {
+        background-color: var(--accent);
+      }
+
+      .btn-news:hover {
+        background-color: #008c44;
+      }
+
+      /* About Intro Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease;
+      }
+
+      .about-image.animated {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .about-text {
+        flex: 1;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+      }
+
+      .about-text.animated {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Mission & Vision Section */
+      .mission-vision {
+        background-color: var(--light);
+      }
+
+      .mv-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .mv-card {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .mv-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mv-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .mv-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 25px;
+      }
+
+      .mv-card h3 {
+        margin-bottom: 20px;
+        color: var(--secondary);
+      }
+
+      /* Values Section */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .value-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .value-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .value-card:hover h3,
+      .value-card:hover .value-icon {
+        color: white;
+      }
+
+      .value-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        transition: all 0.3s;
+      }
+
+      /* Team Section */
+      .team {
+        background-color: var(--light);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .team-member {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .team-member.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .team-member:hover .team-img img {
+        transform: scale(1.1);
+      }
+
+      .team-info {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .team-info h3 {
+        margin-bottom: 5px;
+        color: var(--secondary);
+      }
+
+      .team-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .team-social a {
+        width: 35px;
+        height: 35px;
+        background-color: var(--light-gray);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark);
+        transition: all 0.3s;
+      }
+
+      .team-social a:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Timeline Section */
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .timeline-item.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        border: 4px solid var(--primary);
+        border-radius: 50%;
+        top: 15px;
+        z-index: 1;
+      }
+
+      .timeline-item:nth-child(odd)::after {
+        right: -13px;
+      }
+
+      .timeline-item:nth-child(even)::after {
+        left: -13px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-date {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      /* CTA Section */
+      .cta {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .cta h2 {
+        color: white;
+        margin-bottom: 30px;
+      }
+
+      .cta p {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        font-size: 1.2rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .about-image,
+        .about-text {
+          flex: none;
+          width: 100%;
+        }
+
+        .about-hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item:nth-child(even) {
+          left: 0;
+        }
+
+        .timeline-item::after {
+          left: 18px;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+          right: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%;
+          width: 33.33%;
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .about-hero {
+          margin-top: 70px;
+          height: 50vh;
+        }
+
+        .about-hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .about-hero-content p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          display: block;
+          margin: 10px auto;
+          width: 80%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .about-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .about-hero-content p {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .nav-menu {
+          width: 40%;
+          right: -80%;
+        }
+
+        .section {
+          padding: 60px 0;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container about-hero-content">
+        <h1>About Konacare Limited</h1>
+        <p>Your trusted partner in healthcare solutions across Ghana</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- About Intro Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Story</h2>
+          <p>Committed to excellence in healthcare since our inception</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+              alt="Konacare Office"
+            />
+          </div>
+          <div class="about-text">
+            <h3>Leading Healthcare Supplier in Ghana</h3>
+            <p>
+              Konacare Limited is a premier supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana. Founded with a
+              vision to transform healthcare delivery, we have established
+              ourselves as a trusted partner for hospitals, clinics, and
+              healthcare providers across the country.
+            </p>
+            <p>
+              Our journey began with a simple mission: to enhance healthcare
+              delivery in Ghana by providing quality products, reliable
+              services, and expert consultancy. Over the years, we have grown
+              into a comprehensive healthcare solutions provider, working with
+              reputable manufacturers and suppliers from around the world.
+            </p>
+            <p>
+              At Konacare, we are committed to excellence, integrity, and
+              customer satisfaction. Our team of experienced professionals is
+              dedicated to understanding your needs and providing tailored
+              solutions that meet your specific requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section mission-vision">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Mission & Vision</h2>
+          <p>Guiding principles that drive our operations</p>
+        </div>
+
+        <div class="mv-container">
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To enhance healthcare delivery in Ghana by providing high-quality
+              pharmaceutical products, state-of-the-art medical equipment, and
+              expert consultancy services that meet the evolving needs of
+              healthcare providers and patients.
+            </p>
+          </div>
+
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the leading healthcare solutions provider in Ghana,
+              recognized for our commitment to quality, innovation, and
+              excellence in improving patient outcomes and advancing healthcare
+              delivery across the nation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Values</h2>
+          <p>The principles that guide everything we do</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Quality</h3>
+            <p>
+              We are committed to providing products and services that meet the
+              highest standards of quality and reliability.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Integrity</h3>
+            <p>
+              We conduct our business with honesty, transparency, and ethical
+              practices in all our interactions.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Innovation</h3>
+            <p>
+              We embrace new technologies and innovative solutions to address
+              the evolving needs of the healthcare sector.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Partnership</h3>
+            <p>
+              We believe in building long-term relationships with our clients,
+              suppliers, and stakeholders based on mutual trust.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" style="background-color: var(--light)">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Journey</h2>
+          <p>Key milestones in our growth and development</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2010</div>
+              <h3>Company Founded</h3>
+              <p>
+                Konacare Limited was established with a vision to transform
+                healthcare delivery in Ghana.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2012</div>
+              <h3>First Major Partnership</h3>
+              <p>
+                Secured partnerships with leading international pharmaceutical
+                manufacturers.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2015</div>
+              <h3>Expanded Product Portfolio</h3>
+              <p>
+                Introduced medical equipment and devices to our product
+                offerings.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2018</div>
+              <h3>National Reach</h3>
+              <p>
+                Expanded our services to cover all regions of Ghana,
+                establishing a nationwide presence.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2022</div>
+              <h3>Consultancy Division Launch</h3>
+              <p>
+                Launched our healthcare consultancy services to provide
+                comprehensive solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2023</div>
+              <h3>Digital Transformation</h3>
+              <p>
+                Implemented digital solutions to enhance customer experience and
+                operational efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Leadership Team</h2>
+          <p>Experienced professionals dedicated to healthcare excellence</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="images/godfred.jpeg" alt="CEO" />
+            </div>
+            <div class="team-info">
+              <h3>Godfred Boateng Sefa</h3>
+              <div class="team-role">Chief Executive Officer</div>
+              <p>
+                15+ years of experience in healthcare management and
+                pharmaceutical distribution.
+              </p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-img">
+              <img src="images/yussifchibsah.jpg" alt="Chirman of YAC Group" />
+            </div>
+            <div class="team-info">
+              <h3>Yussif Chibsah</h3>
+              <div class="team-role">Chairman</div>
+              <p>
+                Expertise in supply chain management and healthcare logistics
+                with 12 years of experience.
+              </p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-img">
+              <img
+                src="images/zafar.jpg"
+                alt="Administration and Communications Manager"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Zafar L. Obinkyere</h3>
+              <div class="team-role">
+                Administration and Communications Manager
+              </div>
+              <p>
+                Medical doctor with specialization in public health and 10 years
+                of clinical experience.
+              </p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-img">
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                alt="Sales Director"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Abena Sarpong</h3>
+              <div class="team-role">Sales Director</div>
+              <p>
+                10+ years in pharmaceutical sales and business development
+                across West Africa.
+              </p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Partner With Us</h2>
+        <p>
+          Join hands with Konacare Limited to transform healthcare delivery in
+          Ghana. Let's work together to provide quality healthcare solutions to
+          communities across the nation.
+        </p>
+        <a href="index.html#contact" class="btn">Contact Us Today</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="index.html#services">Pharmaceutical Products</a></li>
+              <li><a href="index.html#services">Medical Equipment</a></li>
+              <li><a href="index.html#services">Medical Devices</a></li>
+              <li><a href="index.html#services">Consultancy</a></li>
+              <li><a href="index.html#services">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on("click", function (e) {
+          if ($(this).attr("href") === "#") return;
+
+          e.preventDefault();
+
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top - 80,
+            },
+            500,
+            "linear"
+          );
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+          $(
+            ".about-image, .about-text, .mv-card, .value-card, .team-member, .timeline-item"
+          ).each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>

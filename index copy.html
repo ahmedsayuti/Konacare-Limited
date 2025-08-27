@@ -4,6 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konacare Limited - Pharmaceutical & Medical Equipment</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
@@ -14,7 +59,7 @@
     />
     <style>
       :root {
-        --primary: #0066cc;
+        --primary: #ef5a84;
         --secondary: #004d99;
         --accent: #00a651;
         --light: #f8f9fa;
@@ -80,14 +125,7 @@
 
       .logo img {
         height: 50px;
-      }
-
-      .logo-text {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        font-size: 24px;
-        color: var(--primary);
-        margin-left: 10px;
+        width: auto;
       }
 
       .nav-menu {
@@ -546,7 +584,9 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 14px;
       }
-
+      .fa-spinner {
+        margin-right: 8px;
+      }
       /* Animations */
       @keyframes fadeInUp {
         from {
@@ -656,7 +696,7 @@
         }
 
         .nav-menu {
-          width: 80%; /* On very small screens, use 80% width */
+          width: 40%; /* On very small screens, use 80% width */
           right: -80%;
         }
       }
@@ -676,6 +716,101 @@
       .overlay.active {
         display: block;
       }
+
+      /* Form Popup Styles */
+      .form-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .form-popup {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .form-popup-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .form-popup-content p {
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .popup-close {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .popup-close:hover {
+        background-color: var(--secondary);
+      }
+      /* Add this CSS to your existing style section */
+      .form-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .form-popup {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .form-popup-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .form-popup-content p {
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .popup-close {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .popup-close:hover {
+        background-color: var(--secondary);
+      }
     </style>
   </head>
   <body>
@@ -683,7 +818,9 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <div class="logo-text">Konacare</div>
+          <a href="#home">
+            <img src="images/logo.png" alt="Konacare Logo" />
+          </a>
         </div>
 
         <div class="mobile-toggle">
@@ -691,12 +828,12 @@
         </div>
 
         <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </header>
@@ -1011,7 +1148,10 @@
               </div>
               <div>
                 <h3>Location</h3>
-                <p>123 Healthcare Avenue, Accra, Ghana</p>
+                <p>
+                  H/No. B489/14 Kaneshie First light, Afadjato Close - Accra,
+                  Accra, Ghana
+                </p>
               </div>
             </div>
 
@@ -1021,8 +1161,8 @@
               </div>
               <div>
                 <h3>Phone</h3>
-                <p>+233 24 123 4567</p>
-                <p>+233 20 987 6543</p>
+                <p>+233 20 181 8195</p>
+                <p>+233 54 152 1002</p>
               </div>
             </div>
 
@@ -1032,33 +1172,60 @@
               </div>
               <div>
                 <h3>Email</h3>
-                <p>info@konacare.com</p>
-                <p>sales@konacare.com</p>
+                <p>info@konacarelimited.com</p>
+                <p>sales@konacarelimited.com</p>
               </div>
             </div>
           </div>
 
           <div class="contact-form">
             <h3>Send us a Message</h3>
-            <form id="contactForm">
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/mvgakjww"
+              method="POST"
+            >
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" class="form-control" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
               </div>
 
               <div class="form-group">
                 <label for="email">Your Email</label>
-                <input type="email" id="email" class="form-control" required />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
               </div>
 
               <div class="form-group">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" class="form-control" required />
+                <input
+                  type="text"
+                  id="subject"
+                  name="_subject"
+                  class="form-control"
+                  required
+                />
               </div>
 
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" class="form-control" required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                ></textarea>
               </div>
 
               <button type="submit" class="btn">Send Message</button>
@@ -1079,21 +1246,44 @@
               medical equipment, and medical devices in Ghana.
             </p>
             <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
             </div>
           </div>
 
           <div class="footer-links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
 
@@ -1238,9 +1428,81 @@
         // Form submission
         $("#contactForm").on("submit", function (e) {
           e.preventDefault();
-          alert("Thank you for your message. We will get back to you soon!");
-          $(this).trigger("reset");
+          var form = $(this);
+          var submitBtn = form.find('button[type="submit"]');
+
+          // Show loading state
+          var originalText = submitBtn.html();
+          submitBtn
+            .html('<i class="fas fa-spinner fa-spin"></i> Sending...')
+            .prop("disabled", true);
+
+          // Create FormData object
+          var formData = new FormData();
+          formData.append("name", $("#name").val());
+          formData.append("email", $("#email").val());
+          formData.append("_subject", $("#subject").val());
+          formData.append("message", $("#message").val());
+
+          // Add Formspree-specific fields
+          formData.append("_format", "plain");
+          formData.append("_replyto", $("#email").val());
+          formData.append("_next", window.location.href);
+
+          // Submit the form to Formspree using fetch API
+          fetch(form.attr("action"), {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                // Show success popup
+                $("body").append(`
+                <div class="form-popup-overlay">
+                  <div class="form-popup">
+                    <div class="form-popup-content">
+                      <h3>Thank You for Your Message!</h3>
+                      <p>We have received your inquiry and the Konacare team will reply to you shortly.</p>
+                      <button class="btn popup-close">OK</button>
+                    </div>
+                  </div>
+                </div>
+              `);
+                form.trigger("reset");
+              } else {
+                throw new Error("Form submission failed");
+              }
+            })
+            .catch((error) => {
+              // Show error popup
+              $("body").append(`
+              <div class="form-popup-overlay">
+                <div class="form-popup">
+                  <div class="form-popup-content">
+                    <h3>Submission Error</h3>
+                    <p>Sorry, there was a problem sending your message. Please try again or contact us directly at info@konacarelimited.com.</p>
+                    <button class="btn popup-close">OK</button>
+                  </div>
+                </div>
+              </div>
+            `);
+            })
+            .finally(() => {
+              // Reset button state
+              submitBtn.html(originalText).prop("disabled", false);
+            });
         });
+        // Close the popup when clicked
+        $(document).on(
+          "click",
+          ".popup-close, .form-popup-overlay",
+          function () {
+            $(".form-popup-overlay").remove();
+          }
+        );
 
         // Animation on scroll
         function animateOnScroll() {

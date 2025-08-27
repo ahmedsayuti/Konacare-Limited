@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Konacare Limited</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Hero Section for Products Page */
+      .products-hero {
+        background: linear-gradient(
+            rgba(0, 77, 153, 0.8),
+            rgba(0, 77, 153, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80");
+        background-size: cover;
+        background-position: center;
+        padding: 160px 0 80px;
+        color: white;
+        text-align: center;
+      }
+
+      .products-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: white;
+        animation: fadeInUp 1s ease;
+      }
+
+      .products-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        animation: fadeInUp 1.2s ease;
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      /* Products Filter */
+      .products-filter {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        background-color: white;
+        border: 2px solid var(--primary);
+        border-radius: 30px;
+        color: var(--primary);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Products Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .product-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .product-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .product-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .product-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .product-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .product-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .product-card:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+      .product-card:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.1);
+      }
+
+      .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .product-card:hover .product-overlay {
+        opacity: 1;
+      }
+
+      .product-overlay-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .overlay-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      .product-card:hover .overlay-btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .overlay-btn:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .overlay-btn:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      .overlay-btn:hover {
+        background: var(--secondary);
+        transform: scale(1.1);
+      }
+
+      .product-content {
+        padding: 25px;
+      }
+
+      .product-category {
+        color: var(--gray);
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .product-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        color: var(--dark);
+      }
+
+      .product-description {
+        color: var(--gray);
+        margin-bottom: 20px;
+      }
+
+      .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .product-price {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .product-btn {
+        padding: 8px 20px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .product-btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+      }
+
+      /* Featured Products Section */
+      .featured-products {
+        background-color: var(--light);
+      }
+
+      /* Product Categories Section */
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .category-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        text-align: center;
+        padding: 40px 30px;
+      }
+
+      .category-card:hover {
+        transform: translateY(-10px);
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .category-card:hover h3,
+      .category-card:hover .category-icon {
+        color: white;
+      }
+
+      .category-icon {
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        transition: all 0.3s;
+      }
+
+      .category-card h3 {
+        margin-bottom: 15px;
+        transition: all 0.3s;
+      }
+
+      .category-card p {
+        color: var(--gray);
+        transition: all 0.3s;
+      }
+
+      .category-card:hover p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .cta-section h2 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 1.2rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .products-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%;
+          width: 33.33%;
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .products-hero {
+          padding: 140px 0 60px;
+        }
+
+        .products-hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .products-hero p {
+          font-size: 1rem;
+        }
+
+        .filter-btn {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .products-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .products-hero p {
+          font-size: 0.9rem;
+        }
+
+        .nav-menu {
+          width: 80%;
+          right: -80%;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+      <div class="container">
+        <h1>Our Premium Healthcare Products</h1>
+        <p>
+          Discover our extensive range of pharmaceutical products, medical
+          equipment, and devices designed to enhance patient care and improve
+          healthcare outcomes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Product Categories</h2>
+          <p>Explore our comprehensive range of healthcare solutions</p>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-pills"></i>
+            </div>
+            <h3>Pharmaceuticals</h3>
+            <p>Quality medicines and drugs from trusted manufacturers</p>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>Medical Equipment</h3>
+            <p>Advanced equipment for diagnosis and treatment</p>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Medical Devices</h3>
+            <p>Innovative devices for patient monitoring and care</p>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-first-aid"></i>
+            </div>
+            <h3>Consumables</h3>
+            <p>Disposable medical supplies and accessories</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section featured-products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Products</h2>
+          <p>Our most popular healthcare products</p>
+        </div>
+
+        <div class="products-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Products
+          </button>
+          <button class="filter-btn" data-filter="pharmaceutical">
+            Pharmaceuticals
+          </button>
+          <button class="filter-btn" data-filter="equipment">
+            Medical Equipment
+          </button>
+          <button class="filter-btn" data-filter="device">
+            Medical Devices
+          </button>
+          <button class="filter-btn" data-filter="consumable">
+            Consumables
+          </button>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card" data-category="pharmaceutical">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80"
+                alt="Pharmaceutical Products"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Pharmaceuticals</span>
+              <h3>Advanced Antibiotics</h3>
+              <p class="product-description">
+                Broad-spectrum antibiotics for effective treatment of bacterial
+                infections.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$45.99</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card" data-category="equipment">
+            <div class="product-image">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1661677826562-0f405948b389?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Equipment"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Medical Equipment</span>
+              <h3>Portable Ultrasound</h3>
+              <p class="product-description">
+                High-resolution imaging with portable convenience for
+                point-of-care diagnostics.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$8,499.00</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card" data-category="device">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Devices"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Medical Devices</span>
+              <h3>Digital Blood Pressure Monitor</h3>
+              <p class="product-description">
+                Accurate and easy-to-use blood pressure monitoring for home
+                healthcare.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$89.99</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-category="consumable">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1585417238564-fcdf0b69535f?q=80&w=849&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Consumables"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Consumables</span>
+              <h3>Sterile Surgical Gloves</h3>
+              <p class="product-description">
+                Premium quality latex-free gloves for medical procedures and
+                examinations.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$24.99 / box</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card" data-category="pharmaceutical">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1617881770125-6fb0d039ecde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyZGlvdmFzY3VsYXIlMjBtZWRpY2F0aW9uc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Pharmaceutical Products"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Pharmaceuticals</span>
+              <h3>Cardiovascular Medications</h3>
+              <p class="product-description">
+                Comprehensive range of drugs for heart conditions and blood
+                pressure management.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$62.50</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card" data-category="equipment">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1725859189283-eaeb03a0a1c9?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Equipment"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Medical Equipment</span>
+              <h3>ECG Machine</h3>
+              <p class="product-description">
+                12-channel ECG machine with advanced analysis software for
+                accurate cardiac diagnostics.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$3,750.00</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card" data-category="device">
+            <div class="product-image">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1716719139866-8b47d6bb5841?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Devices"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Medical Devices</span>
+              <h3>Portable Oxygen Concentrator</h3>
+              <p class="product-description">
+                Lightweight and efficient oxygen therapy solution for patients
+                on the go.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$1,299.00</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card" data-category="consumable">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1752842350655-838c443e4676?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlzcG9zYWJsZSUyMHN5cmluZ2VzfGVufDB8fDB8fHww"
+                alt="Medical Consumables"
+              />
+              <div class="product-overlay">
+                <div class="product-overlay-buttons">
+                  <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="overlay-btn"
+                    ><i class="fas fa-shopping-cart"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Consumables</span>
+              <h3>Disposable Syringes</h3>
+              <p class="product-description">
+                Sterile, single-use syringes in various sizes for safe
+                medication administration.
+              </p>
+              <div class="product-footer">
+                <div class="product-price">$15.99 / box</div>
+                <button class="product-btn">Inquire</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Can't Find What You're Looking For?</h2>
+        <p>
+          We have an extensive catalog of healthcare products. Contact us with
+          your specific requirements, and our team will help you find the
+          perfect solution.
+        </p>
+        <a href="contact.html" class="btn">Contact Our Team</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Pharmaceutical Products</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on("click", function (e) {
+          if ($(this).attr("href") === "#") return;
+
+          e.preventDefault();
+
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top - 80,
+            },
+            500,
+            "linear"
+          );
+        });
+
+        // Product filtering
+        $(".filter-btn").on("click", function () {
+          // Remove active class from all buttons
+          $(".filter-btn").removeClass("active");
+
+          // Add active class to clicked button
+          $(this).addClass("active");
+
+          // Get filter value
+          const filter = $(this).data("filter");
+
+          // Show all products if filter is 'all'
+          if (filter === "all") {
+            $(".product-card").fadeIn(500);
+          } else {
+            // Hide all products
+            $(".product-card").hide();
+
+            // Show products with matching category
+            $(`.product-card[data-category="${filter}"]`).fadeIn(500);
+          }
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+          $(".product-card, .category-card").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>
