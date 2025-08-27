@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advancements in Diagnostic Technology - Konacare Limited</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="../android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="../mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Page Banner */
+      .article-banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://plus.unsplash.com/premium_photo-1683134696709-fd1657ea616b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 80px;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      .article-banner h1 {
+        font-size: 2.8rem;
+        color: white;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .article-banner .article-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        animation: fadeInUp 1.2s ease;
+      }
+
+      .article-banner .article-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        background-color: var(--light);
+        padding: 15px 0;
+        margin-bottom: 40px;
+      }
+
+      .breadcrumb-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary);
+      }
+
+      .breadcrumb span {
+        margin: 0 10px;
+        color: var(--gray);
+      }
+
+      /* Article Content */
+      .article-section {
+        padding: 60px 0;
+      }
+
+      .article-container {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 40px;
+      }
+
+      .article-content {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      .article-content.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .article-intro {
+        font-size: 1.2rem;
+        color: var(--secondary);
+        margin-bottom: 30px;
+        font-weight: 600;
+        border-left: 4px solid var(--primary);
+        padding-left: 20px;
+      }
+
+      .article-body {
+        margin-bottom: 40px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .article-image {
+        margin: 30px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s;
+      }
+
+      .article-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .article-image figcaption {
+        padding: 10px 15px;
+        background-color: var(--light);
+        font-size: 0.9rem;
+        color: var(--gray);
+        text-align: center;
+      }
+
+      .key-points {
+        background-color: var(--light);
+        padding: 30px;
+        border-radius: 8px;
+        margin: 40px 0;
+      }
+
+      .key-points h3 {
+        margin-bottom: 20px;
+        color: var(--secondary);
+      }
+
+      .key-points ul {
+        list-style: none;
+      }
+
+      .key-points li {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .key-points li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      /* Sidebar */
+      .article-sidebar {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease 0.3s;
+      }
+
+      .article-sidebar.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .sidebar-widget {
+        background-color: var(--light);
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .sidebar-widget h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .author-info {
+        text-align: center;
+      }
+
+      .author-info .author-avatar {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 15px;
+      }
+
+      .author-info h4 {
+        margin-bottom: 5px;
+      }
+
+      .author-title {
+        color: var(--gray);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .social-share {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .social-share a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--secondary);
+        color: white;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      .social-share a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .related-articles ul {
+        list-style: none;
+      }
+
+      .related-articles li {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .related-articles li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .related-articles a {
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 600;
+      }
+
+      .related-articles a:hover {
+        color: var(--primary);
+      }
+
+      .related-date {
+        font-size: 0.8rem;
+        color: var(--gray);
+        margin-top: 5px;
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        background-color: var(--secondary);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .newsletter h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        font-size: 16px;
+      }
+
+      .newsletter-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px 8px 8px 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .newsletter-btn:hover {
+        background-color: var(--accent);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .article-sidebar {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%;
+          width: 33.33%;
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .article-banner {
+          margin-top: 70px;
+          padding: 100px 0 60px;
+        }
+
+        .article-banner h1 {
+          font-size: 2.2rem;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+
+        .newsletter-btn {
+          border-radius: 4px;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .article-banner h1 {
+          font-size: 1.8rem;
+        }
+
+        .nav-menu {
+          width: 40%;
+          right: -80%;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../news.html" class="active">News</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Article Banner -->
+    <section class="article-banner">
+      <div class="container">
+        <h1>Advancements in Diagnostic Technology</h1>
+        <div class="article-meta">
+          <span class="date"
+            ><i class="far fa-calendar"></i> February 22, 2025</span
+          >
+          <div class="article-author">
+            <div class="author-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Dr. Benjamin Osei"
+              />
+            </div>
+            <span class="author-name">Dr. Benjamin Osei</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container breadcrumb-container">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../news.html">News</a>
+        <span>/</span>
+        <a href="diagnostic-technology-advancements.html"
+          >Advancements in Diagnostic Technology</a
+        >
+      </div>
+    </div>
+
+    <!-- Article Section -->
+    <section class="article-section">
+      <div class="container article-container">
+        <div class="article-content">
+          <p class="article-intro">
+            Cutting-edge diagnostic equipment is revolutionizing early detection
+            and treatment outcomes for patients throughout Ghana, improving
+            healthcare delivery and saving lives.
+          </p>
+
+          <div class="article-body">
+            <p>
+              The healthcare landscape in Ghana is undergoing a significant
+              transformation, driven by rapid advancements in diagnostic
+              technology. These innovations are enabling earlier detection of
+              diseases, more accurate diagnoses, and personalized treatment
+              plans that dramatically improve patient outcomes.
+            </p>
+
+            <figure class="article-image">
+              <img
+                src="https://images.unsplash.com/photo-1679496124845-ac6957c8bffd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Modern diagnostic equipment in use"
+              />
+              <figcaption>
+                Advanced diagnostic equipment allows for more accurate and
+                earlier detection of medical conditions
+              </figcaption>
+            </figure>
+
+            <p>
+              In recent years, Ghana has seen the introduction of sophisticated
+              imaging systems, AI-powered diagnostic tools, and portable testing
+              devices that bring laboratory-quality results to remote
+              communities. These technologies are bridging the gap between urban
+              and rural healthcare access, ensuring that more Ghanaians receive
+              timely and accurate medical attention.
+            </p>
+
+            <h2>The Impact of Early Detection</h2>
+            <p>
+              One of the most significant benefits of advanced diagnostic
+              technology is the ability to detect diseases at their earliest
+              stages. For conditions like cancer, cardiovascular diseases, and
+              diabetes, early detection can mean the difference between
+              successful treatment and poor outcomes. Modern imaging techniques
+              such as high-resolution ultrasound, digital mammography, and CT
+              scanning have become increasingly accessible in Ghana's major
+              healthcare facilities.
+            </p>
+
+            <div class="key-points">
+              <h3>Key Advancements in Ghana's Diagnostic Landscape</h3>
+              <ul>
+                <li>
+                  Implementation of AI-assisted imaging analysis for more
+                  accurate readings
+                </li>
+                <li>
+                  Portable diagnostic devices that can be used in remote areas
+                </li>
+                <li>
+                  Telemedicine platforms enabling remote consultations and
+                  diagnoses
+                </li>
+                <li>
+                  Advanced laboratory equipment for faster and more precise test
+                  results
+                </li>
+                <li>
+                  Digital health records that integrate diagnostic data for
+                  comprehensive patient care
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              Konacare Limited has been at the forefront of introducing these
+              technologies to healthcare providers across Ghana. By partnering
+              with leading international manufacturers and providing
+              comprehensive training and support, we ensure that medical
+              professionals can maximize the potential of these advanced tools.
+            </p>
+
+            <h2>Future Directions</h2>
+            <p>
+              The future of diagnostic technology in Ghana looks promising, with
+              emerging trends pointing toward more personalized, predictive, and
+              participatory healthcare. Genetic testing, wearable health
+              monitors, and point-of-care testing devices are set to become more
+              prevalent, further decentralizing and democratizing healthcare
+              access.
+            </p>
+
+            <p>
+              As these technologies continue to evolve, Konacare remains
+              committed to bringing the latest innovations to Ghana's healthcare
+              sector, supporting medical professionals in their mission to
+              provide exceptional care to all patients.
+            </p>
+          </div>
+        </div>
+
+        <div class="article-sidebar">
+          <div class="sidebar-widget author-info">
+            <h3>About the Author</h3>
+            <div class="author-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Dr. Benjamin Osei"
+              />
+            </div>
+            <h4>Dr. Benjamin Osei</h4>
+            <p class="author-title">Senior Medical Technologist</p>
+            <p>
+              Dr. Osei specializes in diagnostic imaging technology with over 12
+              years of experience in implementing advanced medical equipment in
+              healthcare facilities across West Africa.
+            </p>
+
+            <div class="social-share">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget related-articles">
+            <h3>Related Articles</h3>
+            <ul>
+              <li>
+                <a href="pharmaceutical-innovations.html"
+                  >Latest Innovations in Pharmaceutical Delivery Systems</a
+                >
+                <div class="related-date">March 15, 2025</div>
+              </li>
+              <li>
+                <a href="essential-medical-equipment.html"
+                  >Essential Medical Equipment for Modern Clinics</a
+                >
+                <div class="related-date">March 10, 2025</div>
+              </li>
+              <li>
+                <a href="healthcare-trends-west-africa.html"
+                  >Emerging Healthcare Trends in West Africa</a
+                >
+                <div class="related-date">March 5, 2025</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3>Subscribe for Updates</h3>
+            <p>
+              Stay informed about the latest advancements in healthcare
+              technology
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your email address"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>
+          Stay updated with the latest healthcare news, product updates, and
+          industry insights from Konacare Limited.
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Enter your email address"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Pharmaceutical Products</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Animation on scroll for article content
+        function animateOnScroll() {
+          $(".article-content, .article-sidebar").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>
