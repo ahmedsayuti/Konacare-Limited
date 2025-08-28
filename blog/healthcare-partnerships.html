@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Building Sustainable Healthcare Partnerships in Ghana - Konacare Limited
+    </title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="../android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="../mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Page Banner */
+      .page-banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://plus.unsplash.com/premium_photo-1731410157137-208f33d15698?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 80px;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      .page-banner h1 {
+        font-size: 2.8rem;
+        color: white;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .page-banner p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        animation: fadeInUp 1.2s ease;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        background-color: var(--light);
+        padding: 15px 0;
+        margin-bottom: 40px;
+      }
+
+      .breadcrumb-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary);
+      }
+
+      .breadcrumb span {
+        margin: 0 10px;
+        color: var(--gray);
+      }
+
+      /* Article Section */
+      .article-section {
+        padding: 60px 0;
+      }
+
+      .article-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .article-header {
+        margin-bottom: 40px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      .article-header.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .article-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--secondary);
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .article-date,
+      .article-author,
+      .article-category {
+        display: flex;
+        align-items: center;
+        margin: 0 15px 10px;
+        color: var(--gray);
+        font-size: 0.95rem;
+      }
+
+      .article-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        overflow: hidden;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .article-content {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease 0.2s;
+      }
+
+      .article-content.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .article-image {
+        margin-bottom: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .article-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .article-body {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .article-body p {
+        margin-bottom: 25px;
+      }
+
+      .article-body h2 {
+        font-size: 1.8rem;
+        margin: 40px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--light-gray);
+        color: var(--secondary);
+      }
+
+      .article-body h3 {
+        font-size: 1.4rem;
+        margin: 30px 0 15px;
+        color: var(--secondary);
+      }
+
+      .article-body blockquote {
+        border-left: 4px solid var(--primary);
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: var(--gray);
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px 0;
+      }
+
+      .tag {
+        background-color: var(--light);
+        color: var(--gray);
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+      }
+
+      .tag:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .article-share {
+        display: flex;
+        align-items: center;
+        margin: 40px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--light-gray);
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .share-text {
+        margin-right: 15px;
+        font-weight: 600;
+      }
+
+      .share-buttons {
+        display: flex;
+      }
+
+      .share-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--light);
+        color: var(--dark);
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .share-button:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* Related Articles */
+      .related-articles {
+        padding: 60px 0;
+        background-color: var(--light);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .article-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .article-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .article-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .article-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+
+      .card-content {
+        padding: 25px;
+      }
+
+      .card-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .card-content h3 a {
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .card-content h3 a:hover {
+        color: var(--primary);
+      }
+
+      .card-excerpt {
+        color: var(--gray);
+        margin-bottom: 20px;
+      }
+
+      .read-more {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s;
+      }
+
+      .read-more:hover {
+        color: var(--secondary);
+      }
+
+      .read-more i {
+        margin-left: 5px;
+        transition: transform 0.3s;
+      }
+
+      .read-more:hover i {
+        transform: translateX(5px);
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        background-color: var(--secondary);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .newsletter h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        font-size: 16px;
+      }
+
+      .newsletter-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px 8px 8px 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .newsletter-btn:hover {
+        background-color: var(--accent);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%;
+          width: 33.33%;
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .page-banner {
+          margin-top: 70px;
+          padding: 100px 0 60px;
+        }
+
+        .page-banner h1 {
+          font-size: 2.2rem;
+        }
+
+        .page-banner p {
+          font-size: 1rem;
+        }
+
+        .article-title {
+          font-size: 2rem;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .article-date,
+        .article-author,
+        .article-category {
+          margin: 5px 0;
+        }
+
+        .articles-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+
+        .newsletter-btn {
+          border-radius: 4px;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page-banner h1 {
+          font-size: 1.8rem;
+        }
+
+        .page-banner p {
+          font-size: 0.9rem;
+        }
+
+        .nav-menu {
+          width: 40%;
+          right: -80%;
+        }
+
+        .article-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../news.html" class="active">News</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Building Sustainable Healthcare Partnerships in Ghana</h1>
+        <p>
+          How strategic partnerships are strengthening Ghana's medical
+          infrastructure and improving healthcare delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container breadcrumb-container">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../news.html">News</a>
+        <span>/</span>
+        <a href="#">Building Sustainable Healthcare Partnerships</a>
+      </div>
+    </div>
+
+    <!-- Article Section -->
+    <section class="article-section">
+      <div class="container article-container">
+        <div class="article-header">
+          <h1 class="article-title">
+            Building Sustainable Healthcare Partnerships in Ghana
+          </h1>
+          <div class="article-meta">
+            <div class="article-date">
+              <i class="far fa-calendar-alt"></i>
+              <span>February 15, 2025</span>
+            </div>
+            <div class="article-author">
+              <div class="author-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/women/62.jpg"
+                  alt="Sarah Nyarko"
+                />
+              </div>
+              <span>By Sarah Nyarko</span>
+            </div>
+            <div class="article-category">
+              <i class="far fa-folder"></i>
+              <span>Healthcare Policy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-content">
+          <div class="article-image">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1731410157137-208f33d15698?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Healthcare Partnership"
+            />
+          </div>
+
+          <div class="article-body">
+            <p>
+              In recent years, Ghana has made significant strides in improving
+              its healthcare system, but challenges remain in ensuring equitable
+              access to quality medical services across the country. One of the
+              most promising approaches to addressing these challenges has been
+              the development of strategic partnerships between healthcare
+              providers, suppliers, government agencies, and international
+              organizations.
+            </p>
+
+            <h2>The Current Healthcare Landscape</h2>
+            <p>
+              Ghana's healthcare system comprises public, private, and
+              faith-based organizations, each playing a crucial role in service
+              delivery. While urban centers like Accra and Kumasi benefit from
+              relatively well-equipped facilities, rural areas often face
+              shortages of medical personnel, equipment, and pharmaceuticals.
+            </p>
+
+            <p>
+              The government's commitment to universal health coverage through
+              the National Health Insurance Scheme (NHIS) has improved access
+              for many Ghanaians. However, infrastructure gaps and resource
+              constraints continue to hamper the full realization of quality
+              healthcare for all citizens.
+            </p>
+
+            <blockquote>
+              "Sustainable partnerships are not just about financial
+              transactions; they're about building relationships that create
+              lasting value for all stakeholders, especially patients." - Dr.
+              Kwame Osei, Health Ministry Official
+            </blockquote>
+
+            <h2>Key Partnership Models</h2>
+            <p>
+              Several partnership models have emerged as particularly effective
+              in strengthening Ghana's healthcare infrastructure:
+            </p>
+
+            <h3>Public-Private Partnerships (PPPs)</h3>
+            <p>
+              PPPs have been instrumental in developing healthcare
+              infrastructure, particularly in specialized areas like diagnostic
+              centers and dialysis units. These arrangements allow the
+              government to leverage private sector efficiency and investment
+              while maintaining oversight of service quality and accessibility.
+            </p>
+
+            <h3>Supplier-Provider Collaborations</h3>
+            <p>
+              Companies like Konacare Limited have developed innovative
+              partnerships with healthcare facilities that go beyond traditional
+              buyer-seller relationships. These include:
+            </p>
+            <ul>
+              <li>
+                Equipment leasing arrangements that reduce upfront costs for
+                facilities
+              </li>
+              <li>
+                Training programs for healthcare workers on proper equipment use
+              </li>
+              <li>
+                Maintenance and support services that ensure equipment longevity
+              </li>
+              <li>
+                Inventory management solutions that prevent stockouts of
+                essential medicines
+              </li>
+            </ul>
+
+            <h3>International Development Partnerships</h3>
+            <p>
+              Organizations such as the World Health Organization, UNICEF, and
+              various international NGOs have partnered with Ghanaian
+              institutions to address specific health challenges, from maternal
+              mortality to infectious disease control. These partnerships often
+              bring technical expertise and funding while building local
+              capacity.
+            </p>
+
+            <h2>Success Stories</h2>
+            <p>
+              Several notable partnerships have demonstrated the potential of
+              collaborative approaches to healthcare improvement:
+            </p>
+
+            <h3>The Telemedicine Initiative</h3>
+            <p>
+              A partnership between Ghana Health Service, several technology
+              companies, and rural clinics has expanded access to specialist
+              consultations through telemedicine. This has been particularly
+              valuable in remote areas where specialist physicians are scarce.
+            </p>
+
+            <h3>Pharmaceutical Supply Chain Strengthening</h3>
+            <p>
+              Konacare's partnership with the Ministry of Health has helped
+              streamline the pharmaceutical supply chain, reducing stockouts of
+              essential medicines in public health facilities by 45% over the
+              past two years.
+            </p>
+
+            <h3>Medical Equipment Maintenance Program</h3>
+            <p>
+              A collaborative effort between medical suppliers, technical
+              training institutions, and hospitals has created a sustainable
+              model for maintaining medical equipment, addressing a critical gap
+              in many facilities.
+            </p>
+
+            <h2>Challenges and Solutions</h2>
+            <p>
+              While partnerships offer tremendous potential, they also face
+              challenges that must be addressed:
+            </p>
+
+            <h3>Regulatory Hurdles</h3>
+            <p>
+              Navigating Ghana's regulatory environment can be complex,
+              particularly for international partners. Streamlining processes
+              and creating clearer guidelines would facilitate more
+              partnerships.
+            </p>
+
+            <h3>Sustainability Concerns</h3>
+            <p>
+              Many partnerships depend on donor funding or short-term
+              initiatives. Developing business models that ensure financial
+              sustainability beyond initial funding periods is crucial.
+            </p>
+
+            <h3>Alignment of Objectives</h3>
+            <p>
+              Partners may have different priorities and expectations.
+              Establishing clear communication channels and shared metrics for
+              success from the outset helps align objectives.
+            </p>
+
+            <h2>The Path Forward</h2>
+            <p>
+              As Ghana continues to develop its healthcare system, partnerships
+              will play an increasingly important role. Key priorities for the
+              future include:
+            </p>
+            <ol>
+              <li>
+                Developing standardized frameworks for healthcare partnerships
+              </li>
+              <li>
+                Creating platforms for knowledge sharing and collaboration
+              </li>
+              <li>
+                Fostering innovation through pilot programs and testing new
+                models
+              </li>
+              <li>
+                Strengthening monitoring and evaluation to assess partnership
+                impact
+              </li>
+              <li>
+                Building local capacity to reduce dependence on external
+                expertise
+              </li>
+            </ol>
+
+            <p>
+              By focusing on these areas, Ghana can build a healthcare system
+              that leverages the strengths of diverse stakeholders to deliver
+              quality care to all citizens, regardless of their location or
+              socioeconomic status.
+            </p>
+
+            <div class="article-tags">
+              <a href="#" class="tag">Healthcare</a>
+              <a href="#" class="tag">Partnerships</a>
+              <a href="#" class="tag">Ghana</a>
+              <a href="#" class="tag">Medical Infrastructure</a>
+              <a href="#" class="tag">Public Health</a>
+            </div>
+
+            <div class="article-share">
+              <span class="share-text">Share this article:</span>
+              <div class="share-buttons">
+                <a href="#" class="share-button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="share-button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="share-button"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="share-button"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+      <div class="container">
+        <div class="section-title">
+          <h2>Related Articles</h2>
+          <p>More insights from Konacare Limited</p>
+        </div>
+
+        <div class="articles-grid">
+          <!-- Article 1 -->
+          <div class="article-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+                alt="Medical Equipment"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <a href="essential-medical-equipment.html"
+                  >Essential Medical Equipment for Modern Clinics</a
+                >
+              </h3>
+              <p class="card-excerpt">
+                Learn about the must-have medical equipment that every modern
+                healthcare facility should consider.
+              </p>
+              <a href="essential-medical-equipment.html" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Healthcare Trends"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <a href="healthcare-trends-west-africa.html"
+                  >Emerging Healthcare Trends in West Africa</a
+                >
+              </h3>
+              <p class="card-excerpt">
+                Explore the latest developments shaping the future of healthcare
+                delivery across West Africa.
+              </p>
+              <a href="healthcare-trends-west-africa.html" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-card">
+            <div class="card-image">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1683134696709-fd1657ea616b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Technology"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <a href="diagnostic-technology-advancements.html"
+                  >Advancements in Diagnostic Technology</a
+                >
+              </h3>
+              <p class="card-excerpt">
+                How cutting-edge diagnostic equipment is improving early
+                detection and treatment outcomes.
+              </p>
+              <a
+                href="diagnostic-technology-advancements.html"
+                class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>
+          Stay updated with the latest healthcare news, product updates, and
+          industry insights from Konacare Limited.
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Enter your email address"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare</div>
+            <p>
+              Konacare Limited is a leading supplier of pharmaceutical products,
+              medical equipment, and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About Us</a></li>
+              <li><a href="../services.html">Services</a></li>
+              <li><a href="../products.html">Products</a></li>
+              <li><a href="../news.html">News</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Pharmaceutical Products</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Wholesale & Supply</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
+
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Animation on scroll for article elements
+        function animateOnScroll() {
+          $(".article-header, .article-content, .article-card").each(
+            function () {
+              var position = $(this).offset().top;
+              var scroll = $(window).scrollTop();
+              var windowHeight = $(window).height();
+
+              if (scroll + windowHeight - 100 > position) {
+                $(this).addClass("animated");
+              }
+            }
+          );
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+    </script>
+  </body>
+</html>
