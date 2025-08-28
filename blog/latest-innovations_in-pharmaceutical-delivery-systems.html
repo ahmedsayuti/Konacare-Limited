@@ -86,13 +86,16 @@
         box-sizing: border-box;
       }
 
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
       body {
         font-family: "Open Sans", sans-serif;
         color: var(--dark);
         line-height: 1.6;
         background-color: #fff;
-        overflow-x: hidden;
-        width: 100%;
       }
 
       h1,
@@ -114,12 +117,21 @@
         padding: 0 15px;
       }
 
+      /* Full width sections */
+      header, .page-banner, .breadcrumb, .newsletter, footer {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
+
       /* Header Styles */
       header {
         background-color: white;
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         position: fixed;
-        width: 100%;
         top: 0;
         z-index: 1000;
       }
@@ -129,6 +141,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px 0;
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       .logo {
@@ -179,7 +193,6 @@
         color: white;
         text-align: center;
         margin-top: 80px;
-        width: 100%;
       }
 
       .page-banner h1 {
@@ -201,13 +214,15 @@
         background-color: var(--light);
         padding: 15px 0;
         margin-bottom: 40px;
-        width: 100%;
       }
 
       .breadcrumb-container {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
       }
 
       .breadcrumb a {
@@ -286,6 +301,7 @@
         width: 100%;
         height: auto;
         display: block;
+        max-width: 100%;
       }
 
       .article-body h2 {
@@ -625,6 +641,7 @@
         border-radius: 50%;
         margin-right: 8px;
         overflow: hidden;
+        max-width: 100%;
       }
 
       .article-card-author-avatar img {
@@ -668,7 +685,6 @@
         color: white;
         padding: 60px 0;
         text-align: center;
-        width: 100%;
       }
 
       .newsletter h2 {
@@ -717,7 +733,6 @@
         background-color: var(--dark);
         color: white;
         padding: 60px 0 30px;
-        width: 100%;
       }
 
       .footer-container {
@@ -726,6 +741,9 @@
         gap: 40px;
         margin-bottom: 40px;
         width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
       }
 
       .footer-logo {
@@ -734,10 +752,12 @@
         font-size: 24px;
         color: white;
         margin-bottom: 20px;
+        max-width: 100%;
       }
 
       .footer-about p {
         margin-bottom: 20px;
+        max-width: 100%;
       }
 
       .social-links {
@@ -812,6 +832,9 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 14px;
         width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 15px 0;
       }
 
       .btn {
@@ -863,7 +886,7 @@
           position: fixed;
           top: 0;
           right: -100%;
-          width: 70%;
+          width: 80vw;
           height: 100vh;
           background-color: white;
           flex-direction: column;
@@ -942,6 +965,14 @@
 
         .article-main {
           padding: 25px;
+          margin: 0 15px;
+          width: calc(100% - 30px);
+        }
+        
+        .sidebar-widget {
+          padding: 20px;
+          margin: 0 15px 30px;
+          width: calc(100% - 30px);
         }
 
         .article-meta {
@@ -954,15 +985,15 @@
         }
         
         .container {
-          padding: 0 15px;
+          padding: 0;
         }
         
         .blog-content {
           gap: 20px;
         }
         
-        .sidebar-widget {
-          padding: 20px;
+        .related-articles .container {
+          padding: 0 15px;
         }
       }
 
@@ -977,12 +1008,19 @@
         }
 
         .nav-menu {
-          width: 80%;
-          right: -100%;
+          width: 85vw;
         }
 
         .article-main {
           padding: 20px 15px;
+          margin: 0 10px;
+          width: calc(100% - 20px);
+        }
+        
+        .sidebar-widget {
+          padding: 15px;
+          margin: 0 10px 20px;
+          width: calc(100% - 20px);
         }
         
         .article-body h2 {
@@ -1024,6 +1062,11 @@
         
         .footer-container {
           gap: 30px;
+          padding: 0 15px;
+        }
+        
+        .copyright {
+          padding: 20px 15px 0;
         }
       }
 
@@ -1032,7 +1075,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 998;
@@ -1111,7 +1154,7 @@
             <div class="article-meta">
               <div class="author-avatar">
                 <img
-                  src="https://randomuser.me/api/portraits/men/.jpg"
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
                   alt="Author"
                 />
               </div>
@@ -1286,7 +1329,7 @@
               <div class="author-bio">
                 <div class="author-avatar">
                   <img
-                    src="https://randomuser.me/api/portraits/men/.jpg"
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
                     alt="Author"
                   />
                 </div>
@@ -1422,7 +1465,7 @@
                   <div class="article-card-author">
                     <div class="article-card-author-avatar">
                       <img
-                        src="https://randomuser.me/api/portraits/women/.jpg"
+                        src="https://randomuser.me/api/portraits/women/44.jpg"
                         alt="Author"
                       />
                     </div>
@@ -1460,7 +1503,7 @@
                   <div class="article-card-author">
                     <div class="article-card-author-avatar">
                       <img
-                        src="https://randomuser.me/api/portraits/men/.jpg"
+                        src="https://randomuser.me/api/portraits/men/22.jpg"
                         alt="Author"
                       />
                     </div>
