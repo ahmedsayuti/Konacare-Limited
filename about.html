@@ -166,7 +166,7 @@
         align-items: center;
         justify-content: center;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80");
+          url("https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
         background-size: cover;
         background-position: center;
         color: white;
@@ -188,6 +188,14 @@
       .about-hero-content p {
         font-size: 1.2rem;
         margin-bottom: 2rem;
+      }
+
+      .tagline {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 2rem;
+        font-style: italic;
       }
 
       .btn {
@@ -266,6 +274,7 @@
       .about-image.animated {
         opacity: 1;
         transform: translateX(0);
+        transition-delay: 0.3s;
       }
 
       .about-image img {
@@ -284,6 +293,7 @@
       .about-text.animated {
         opacity: 1;
         transform: translateX(0);
+        transition-delay: 0.5s;
       }
 
       /* Mission & Vision Section */
@@ -376,89 +386,48 @@
         transition: all 0.3s;
       }
 
-      /* Team Section */
-      .team {
+      /* Business Activities Section */
+      .activities {
         background-color: var(--light);
       }
 
-      .team-grid {
+      .activities-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
       }
 
-      .team-member {
+      .activity-card {
         background-color: white;
+        padding: 30px;
         border-radius: 8px;
-        overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
         transition: all 0.5s ease;
         opacity: 0;
         transform: translateY(50px);
       }
 
-      .team-member.animated {
+      .activity-card.animated {
         opacity: 1;
         transform: translateY(0);
       }
 
-      .team-member:hover {
+      .activity-card:hover {
         transform: translateY(-10px);
       }
 
-      .team-img {
-        height: 300px;
-        overflow: hidden;
-      }
-
-      .team-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
-
-      .team-member:hover .team-img img {
-        transform: scale(1.1);
-      }
-
-      .team-info {
-        padding: 25px;
-        text-align: center;
-      }
-
-      .team-info h3 {
-        margin-bottom: 5px;
-        color: var(--secondary);
-      }
-
-      .team-role {
-        color: var(--primary);
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .team-social {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .team-social a {
-        width: 35px;
-        height: 35px;
-        background-color: var(--light-gray);
+      .activity-icon {
+        width: 60px;
+        height: 60px;
+        background-color: var(--primary);
+        color: white;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--dark);
-        transition: all 0.3s;
-      }
-
-      .team-social a:hover {
-        background-color: var(--primary);
-        color: white;
+        font-size: 1.5rem;
+        margin: 0 auto 20px;
       }
 
       /* Timeline Section */
@@ -533,6 +502,94 @@
         color: var(--primary);
         font-weight: 600;
         margin-bottom: 10px;
+      }
+
+      /* Team Section */
+      .team {
+        background-color: var(--light);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .team-member {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .team-member.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .team-member:hover .team-img img {
+        transform: scale(1.1);
+      }
+
+      .team-info {
+        padding: 25px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+      }
+
+      .team-info h3 {
+        margin-bottom: 5px;
+        color: white;
+      }
+
+      .team-role {
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .team-social a {
+        width: 35px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s;
+      }
+
+      .team-social a:hover {
+        background-color: white;
+        color: var(--primary);
       }
 
       /* CTA Section */
@@ -632,14 +689,32 @@
       .newsletter-form {
         display: grid;
         gap: 10px;
+        position: relative;
       }
 
       .newsletter-input {
-        flex: 1;
         padding: 12px 15px;
         border: none;
         border-radius: 4px;
         font-size: 16px;
+        width: 100%;
+      }
+
+      .newsletter-btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 7px 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .newsletter-btn:hover {
+        background: var(--secondary);
       }
 
       .copyright {
@@ -750,6 +825,10 @@
           font-size: 1rem;
         }
 
+        .tagline {
+          font-size: 1.2rem;
+        }
+
         .btn {
           display: block;
           margin: 10px auto;
@@ -764,6 +843,10 @@
 
         .about-hero-content p {
           font-size: 0.9rem;
+        }
+
+        .tagline {
+          font-size: 1rem;
         }
 
         .btn {
@@ -818,7 +901,7 @@
 
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="news.html">News</a></li>
@@ -834,7 +917,11 @@
     <section class="about-hero">
       <div class="container about-hero-content">
         <h1>About Konacare Limited</h1>
-        <p>Your trusted partner in healthcare solutions across Ghana</p>
+        <div class="tagline">We flourish Growth</div>
+        <p>
+          Your trusted partner in comprehensive healthcare solutions across
+          Ghana
+        </p>
         <a href="#contact" class="btn">Get In Touch</a>
       </div>
     </section>
@@ -850,26 +937,35 @@
         <div class="about-content">
           <div class="about-image">
             <img
-              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+              src="https://plus.unsplash.com/premium_photo-1682145288913-979906a9ebc8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Konacare Office"
             />
           </div>
           <div class="about-text">
-            <h3>Leading Healthcare Supplier in Ghana</h3>
+            <h3>Leading Healthcare Solutions Provider in Ghana</h3>
             <p>
-              Konacare Limited is a premier supplier of medical equipment and
-              medical devices in Ghana. Founded with a vision to transform
-              healthcare delivery, we have established ourselves as a trusted
-              partner for hospitals, clinics, and healthcare providers across
-              the country.
+              Konacare Ghana Limited was established in May 2023 as a premier
+              supplier of medical equipment, medical devices, and comprehensive
+              healthcare products in Ghana. We have rapidly established
+              ourselves as a trusted partner for hospitals, clinics, pharmacies,
+              and healthcare providers across the country.
             </p>
-            <p>
-              Our journey began with a simple mission: to enhance healthcare
-              delivery in Ghana by providing quality products, reliable
-              services, and expert consultancy. Over the years, we have grown
-              into a comprehensive healthcare solutions provider, working with
-              reputable manufacturers and suppliers from around the world.
-            </p>
+
+            <h4>Our Business Activities</h4>
+            <p>Our major business activities include:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px">
+              <li>Supply of Medical equipment</li>
+              <li>Supply of Medical devices</li>
+              <li>Supply of Medical Disposables (consumables)</li>
+              <li>Cosmetics</li>
+              <li>Food products</li>
+              <li>
+                Wholesale and Retail of Herbal medicine and herbal products
+              </li>
+              <li>Importation of Goods and General merchandise</li>
+              <li>Other health related services</li>
+            </ul>
+
             <p>
               At Konacare, we are committed to excellence, integrity, and
               customer satisfaction. Our team of experienced professionals is
@@ -894,11 +990,12 @@
             <div class="mv-icon">
               <i class="fas fa-bullseye"></i>
             </div>
-            <h3>Our Mission</h3>
+            <h3>Our Vision</h3>
             <p>
-              To enhance healthcare delivery in Ghana by providing high-quality
-              state-of-the-art medical equipment and expert consultancy services
-              that meet the evolving needs of healthcare providers and patients.
+              To be Ghana's most trusted partner in advancing healthcare
+              delivery by providing innovative medical solutions, high-quality
+              products, and sustainable partnerships that improve lives and
+              communities.
             </p>
           </div>
 
@@ -906,12 +1003,14 @@
             <div class="mv-icon">
               <i class="fas fa-eye"></i>
             </div>
-            <h3>Our Vision</h3>
+            <h3>Our Mission</h3>
             <p>
-              To be the leading healthcare solutions provider in Ghana,
-              recognized for our commitment to quality, innovation, and
-              excellence in improving patient outcomes and advancing healthcare
-              delivery across the nation.
+              We exist to make healthcare accessible, reliable, and affordable
+              by supplying quality medical equipment, devices, consumables,
+              food, cosmetics, and herbal products. Through strategic
+              partnerships and revenue-sharing models, we empower hospitals and
+              health facilities to deliver better care while ensuring long-term
+              value for stakeholders.
             </p>
           </div>
         </div>
@@ -922,7 +1021,7 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Our Values</h2>
+          <h2>Our Core Values</h2>
           <p>The principles that guide everything we do</p>
         </div>
 
@@ -931,21 +1030,21 @@
             <div class="value-icon">
               <i class="fas fa-star"></i>
             </div>
-            <h3>Quality</h3>
+            <h3>Integrity</h3>
             <p>
-              We are committed to providing products and services that meet the
-              highest standards of quality and reliability.
+              We act with honesty and fairness in all business dealings,
+              building trust with our partners and customers.
             </p>
           </div>
 
           <div class="value-card">
             <div class="value-icon">
-              <i class="fas fa-handshake"></i>
+              <i class="fas fa-award"></i>
             </div>
-            <h3>Integrity</h3>
+            <h3>Quality & Excellence</h3>
             <p>
-              We conduct our business with honesty, transparency, and ethical
-              practices in all our interactions.
+              We provide only safe, effective, and reliable products and
+              services that meet the highest standards.
             </p>
           </div>
 
@@ -955,8 +1054,30 @@
             </div>
             <h3>Innovation</h3>
             <p>
-              We embrace new technologies and innovative solutions to address
-              the evolving needs of the healthcare sector.
+              We embrace creativity and technology to transform healthcare
+              delivery and improve outcomes.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Partnership</h3>
+            <p>
+              We believe in win-win collaborations with hospitals, suppliers,
+              and communities for mutual growth.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Sustainability</h3>
+            <p>
+              We promote responsible practices for long-term health,
+              environmental, and economic impact.
             </p>
           </div>
 
@@ -964,10 +1085,99 @@
             <div class="value-icon">
               <i class="fas fa-users"></i>
             </div>
-            <h3>Partnership</h3>
+            <h3>Customer Focus</h3>
             <p>
-              We believe in building long-term relationships with our clients,
-              suppliers, and stakeholders based on mutual trust.
+              We prioritize client needs and satisfaction in every engagement,
+              delivering personalized solutions.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Accountability</h3>
+            <p>
+              We take responsibility for our actions and outcomes, ensuring
+              transparency in all our operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Activities Section -->
+    <section class="section activities">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Business Activities</h2>
+          <p>Comprehensive healthcare solutions for Ghana</p>
+        </div>
+
+        <div class="activities-grid">
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>Medical Equipment</h3>
+            <p>
+              State-of-the-art medical equipment for hospitals, clinics, and
+              healthcare facilities.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Medical Devices</h3>
+            <p>
+              Innovative medical devices that enhance patient care and improve
+              treatment outcomes.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-pump-medical"></i>
+            </div>
+            <h3>Medical Consumables</h3>
+            <p>
+              High-quality medical disposables and consumables for healthcare
+              facilities.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>Cosmetics</h3>
+            <p>
+              Premium quality cosmetics and personal care products for beauty
+              and wellness.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Food Products</h3>
+            <p>
+              Nutritious and high-quality food products to support health and
+              wellbeing.
+            </p>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Herbal Products</h3>
+            <p>
+              Authentic herbal medicines and products combining traditional
+              wisdom with modern standards.
             </p>
           </div>
         </div>
@@ -985,66 +1195,66 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2010</div>
-              <h3>Company Founded</h3>
+              <div class="timeline-date">May 2023</div>
+              <h3>Company Establishment</h3>
               <p>
-                Konacare Limited was established with a vision to transform
-                healthcare delivery in Ghana.
+                Konacare Ghana Limited was officially established with a vision
+                to transform healthcare delivery in Ghana.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2012</div>
-              <h3>First Major Partnership</h3>
+              <div class="timeline-date">July 2023</div>
+              <h3>First Major Partnerships</h3>
               <p>
                 Secured partnerships with leading international medical
-                equipment manufacturers.
+                equipment and product manufacturers.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2015</div>
+              <div class="timeline-date">September 2023</div>
               <h3>Expanded Product Portfolio</h3>
               <p>
-                Introduced medical equipment and devices to our product
-                offerings.
+                Introduced comprehensive range of medical equipment, devices,
+                and healthcare products.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2018</div>
+              <div class="timeline-date">December 2023</div>
               <h3>National Reach</h3>
               <p>
-                Expanded our services to cover all regions of Ghana,
-                establishing a nationwide presence.
+                Expanded our services to cover multiple regions of Ghana,
+                establishing a strong nationwide presence.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2022</div>
-              <h3>Consultancy Division Launch</h3>
+              <div class="timeline-date">March 2024</div>
+              <h3>Herbal Medicine Division</h3>
               <p>
-                Launched our healthcare consultancy services to provide
-                comprehensive solutions.
+                Launched our wholesale and retail herbal medicine division,
+                offering authentic traditional remedies.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-content">
-              <div class="timeline-date">2023</div>
-              <h3>Digital Transformation</h3>
+              <div class="timeline-date">Present</div>
+              <h3>Continuous Growth</h3>
               <p>
-                Implemented digital solutions to enhance customer experience and
-                operational efficiency.
+                Ongoing expansion of product offerings and services to meet the
+                evolving healthcare needs of Ghana.
               </p>
             </div>
           </div>
@@ -1068,7 +1278,10 @@
             <div class="team-info">
               <h3>Godfred Boateng Sefa</h3>
               <div class="team-role">Chief Executive Officer</div>
-              <p>15+ years of experience in healthcare management.</p>
+              <p>
+                Visionary leader with a passion for transforming healthcare
+                delivery in Ghana.
+              </p>
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1079,15 +1292,11 @@
 
           <div class="team-member">
             <div class="team-img">
-              <img src="images/yussifchibsah.jpg" alt="Chirman of YAC Group" />
+              <img src="images/yussifchibsah.jpg" alt="Chairman of YAC Group" />
             </div>
             <div class="team-info">
               <h3>Yussif Chibsah</h3>
               <div class="team-role">Chairman</div>
-              <p>
-                Expertise in supply chain management and healthcare logistics
-                with 12 years of experience.
-              </p>
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1108,10 +1317,6 @@
               <div class="team-role">
                 Administration and Communications Manager
               </div>
-              <p>
-                Medical doctor with specialization in public health and 10 years
-                of clinical experience.
-              </p>
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1127,10 +1332,6 @@
             <div class="team-info">
               <h3>Abena Sarpong</h3>
               <div class="team-role">Sales Director</div>
-              <p>
-                10+ years in medical essential medical equipment sales and
-                business development across West Africa.
-              </p>
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1151,7 +1352,7 @@
           Ghana. Let's work together to provide quality healthcare solutions to
           communities across the nation.
         </p>
-        <a href="index.html#contact" class="btn">Contact Us Today</a>
+        <a href="contact.html" class="btn">Contact Us Today</a>
       </div>
     </section>
 
@@ -1162,8 +1363,8 @@
           <div class="footer-about">
             <div class="footer-logo">Konacare</div>
             <p>
-              Konacare Limited is a leading supplier of medical equipment and
-              medical devices in Ghana.
+              Konacare Limited is a leading supplier of medical equipment,
+              medical devices, and comprehensive healthcare products in Ghana.
             </p>
             <div class="social-links">
               <a
@@ -1200,7 +1401,7 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="index.html#services">Services</a></li>
+              <li><a href="services.html">Services</a></li>
               <li><a href="products.html">Products</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contact.html">Contact Us</a></li>
@@ -1210,10 +1411,12 @@
           <div class="footer-links">
             <h3>Services</h3>
             <ul>
-              <li><a href="products.html">Medical Equipment</a></li>
-              <li><a href="products.html">Medical Devices</a></li>
-              <li><a href="services.html">Consultancy</a></li>
-              <li><a href="products.html">Wholesale & Supply</a></li>
+              <li><a href="#">Medical Equipment</a></li>
+              <li><a href="#">Medical Devices</a></li>
+              <li><a href="#">Medical Consumables</a></li>
+              <li><a href="#">Herbal Products</a></li>
+              <li><a href="#">Cosmetics</a></li>
+              <li><a href="#">Food Products</a></li>
             </ul>
           </div>
 
@@ -1229,7 +1432,7 @@
                 class="newsletter-input"
                 placeholder="Your Email"
               />
-              <button type="submit" class="btn">Subscribe</button>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
           </div>
         </div>
@@ -1281,7 +1484,7 @@
         // Animation on scroll
         function animateOnScroll() {
           $(
-            ".about-image, .about-text, .mv-card, .value-card, .team-member, .timeline-item"
+            ".about-image, .about-text, .mv-card, .value-card, .activity-card, .team-member, .timeline-item"
           ).each(function () {
             var position = $(this).offset().top;
             var scroll = $(window).scrollTop();
