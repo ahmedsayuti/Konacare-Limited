@@ -883,6 +883,112 @@
       .overlay.active {
         display: block;
       }
+      /* Collaborations Section */
+      .collaborations-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .collaborations-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .collaboration-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        opacity: 0;
+        transform: translateY(50px);
+        position: relative;
+      }
+
+      .collaboration-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .collaboration-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .collaboration-logo {
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+      }
+
+      .collaboration-logo img {
+        max-width: 80%;
+        max-height: 80px;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+      }
+
+      .collaboration-content {
+        padding: 25px;
+      }
+
+      .collaboration-year {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--accent);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .collaboration-content h3 {
+        color: var(--secondary);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .collaboration-content p {
+        color: var(--gray);
+        line-height: 1.6;
+      }
+
+      .collaboration-country {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 4px 10px;
+        background: var(--light);
+        border-radius: 4px;
+        font-size: 12px;
+        color: var(--dark);
+        font-weight: 600;
+      }
+
+      /* Animation for the section */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .collaborations-container {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1261,7 +1367,209 @@
         </div>
       </div>
     </section>
+    <!-- Add this section after the Timeline section and before the Team section -->
+    <section class="section collaborations-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our International Collaborations</h2>
+          <p>
+            Strategic partnerships with global leaders in healthcare and
+            technology
+          </p>
+        </div>
 
+        <div class="collaborations-container">
+          <!-- Collaboration 6 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/yasee.png"
+                alt="Yasee Biomedical"
+              />
+            </div>
+            <span class="collaboration-year">2025</span>
+            <div class="collaboration-content">
+              <h3>Yasee Biomedical</h3>
+              <p>
+                Supplier of advanced multifunctional monitors and diagnostic
+                test strips for glucose, ketone, and uric acid testing.
+              </p>
+              <span class="collaboration-country">China</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 2 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/senera_essentials.png"
+                alt="Senera Essentials"
+              />
+            </div>
+            <span class="collaboration-year">2024</span>
+            <div class="collaboration-content">
+              <h3>Senera Essentials</h3>
+              <p>
+                Provider of Zero Block products, offering innovative healthcare
+                solutions that complement our product portfolio.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 7 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img src="images/international/c&i.png" alt="C&I Marketing" />
+            </div>
+            <span class="collaboration-year">2024</span>
+            <div class="collaboration-content">
+              <h3>C&I Marketing</h3>
+              <p>
+                Provider of popular hair care brands including "Adore Henna",
+                "Adore Naturals", and "Fayseena" for the Ghanaian market.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 1 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/gangotri_organics.png"
+                alt="Gangotri Organics"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>Gangotri Organics</h3>
+              <p>
+                Leading Indian manufacturer of healthcare and personal care
+                products, providing high-quality formulations for the Ghanaian
+                market.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 3 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/bio_mileager.png"
+                alt="Bio Mileager"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>Bio Mileager</h3>
+              <p>
+                Specialists in automotive, industrial lubricants, and fuel
+                additives that help improve efficiency and reduce environmental
+                impact.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 4 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/radhe_gopal_industries.png"
+                alt="Radhe Gopal Industries"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>Radhe Gopal Industries</h3>
+              <p>
+                Manufacturer of high-quality sweat pads and personal care
+                products that meet international standards.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 5 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/connote_healthcare.png"
+                alt="Connote Healthcare"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>Connote Healthcare</h3>
+              <p>
+                Provider of premium cosmetics and personal care products that
+                enhance our beauty and wellness offerings.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 8 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/uniko_india.png"
+                alt="UNIKO India"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>UNIKO India</h3>
+              <p>
+                Supplier of innovative UNIKO Carbon Cleaner and Engine
+                Decarbonizing machines for automotive maintenance.
+              </p>
+              <span class="collaboration-country">India</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 9 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/gemini_uae.png"
+                alt="GEMINI Dubai"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>GEMINI Dubai</h3>
+              <p>
+                Provider of advanced Hospital Information System (HIS) products
+                that help streamline healthcare operations.
+              </p>
+              <span class="collaboration-country">UAE</span>
+            </div>
+          </div>
+
+          <!-- Collaboration 10 -->
+          <div class="collaboration-card">
+            <div class="collaboration-logo">
+              <img
+                src="images/international/curacel_claims.png"
+                alt="Curacel Claims"
+              />
+            </div>
+            <span class="collaboration-year">2023</span>
+            <div class="collaboration-content">
+              <h3>Curacel Claims</h3>
+              <p>
+                Innovative digital health insurance claims solutions that
+                revolutionize how healthcare payments are processed.
+              </p>
+              <span class="collaboration-country">Nigeria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Team Section -->
     <section class="section team">
       <div class="container">
@@ -1273,17 +1581,19 @@
         <div class="team-grid">
           <div class="team-member">
             <div class="team-img">
-              <img src="images/godfred.jpeg" alt="CEO" />
+              <img src="images/yussifchibsah.jpg" alt="Board Chairman" />
             </div>
             <div class="team-info">
-              <h3>Godfred Boateng Sefa</h3>
-              <div class="team-role">Chief Executive Officer</div>
-              <p>
-                Visionary leader with a passion for transforming healthcare
-                delivery in Ghana.
-              </p>
+              <h3>Yussif Alhasan Chibsah</h3>
+              <div class="team-role">Board Chairman</div>
+              <br />
               <div class="team-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a
+                  href="https://www.linkedin.com/in/yussif-alhassan-chibsah-a1a96034/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
               </div>
@@ -1292,13 +1602,42 @@
 
           <div class="team-member">
             <div class="team-img">
-              <img src="images/yussifchibsah.jpg" alt="Chairman of YAC Group" />
+              <img src="images/godfred.jpg" alt="Chief Executive Officer" />
             </div>
             <div class="team-info">
-              <h3>Yussif Chibsah</h3>
-              <div class="team-role">Chairman</div>
+              <h3>Godfred Boateng Sefa</h3>
+              <div class="team-role">Chief Executive Officer</div>
+              <br />
+              <br />
               <div class="team-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a
+                  href="https://www.linkedin.com/in/godfred-boateng-sefa-582747225/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-img">
+              <img src="images/charlesotu.jpg" alt="Project Coordinator" />
+            </div>
+            <div class="team-info">
+              <h3>Charles Otu Akrofi</h3>
+              <div class="team-role">Project Coordinator</div>
+              <br />
+              <br />
+              <div class="team-social">
+                <a
+                  href="https://www.linkedin.com/in/charles-otu-akrofi-a46840288/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
               </div>
@@ -1313,27 +1652,18 @@
               />
             </div>
             <div class="team-info">
-              <h3>Zafar L. Obinkyere</h3>
+              <h3>Zafar Little Obinkyere</h3>
               <div class="team-role">
                 Administration and Communications Manager
               </div>
+              <br />
               <div class="team-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="team-img">
-              <img src="" alt="Sales Director" />
-            </div>
-            <div class="team-info">
-              <h3>Abena Sarpong</h3>
-              <div class="team-role">Sales Director</div>
-              <div class="team-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=zafar%20obinkyere&origin=TYPEAHEAD_HISTORY&searchId=f1580939-ddae-4141-8f50-cd5b0d42f49d&sid=2C.&spellCorrectionEnabled=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
               </div>
@@ -1386,7 +1716,7 @@
                 rel="noopener noreferrer"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="#"
+              <a href="https://www.linkedin.com/in/konacare-limited-58365228b/"
                 ><i
                   class="fab fa-linkedin-in"
                   target="_blank"
@@ -1499,6 +1829,29 @@
         // Run on load and scroll
         animateOnScroll();
         $(window).scroll(animateOnScroll);
+      });
+      // Add this to your existing script section
+      function animateCollaborations() {
+        $(".collaboration-card").each(function (index) {
+          var position = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (scroll + windowHeight - 100 > position) {
+            // Stagger the animation with a delay based on index
+            var delay = index * 100; // 100ms delay between each card
+            var card = $(this);
+            setTimeout(function () {
+              card.addClass("animated");
+            }, delay);
+          }
+        });
+      }
+
+      // Run on load and scroll
+      $(document).ready(function () {
+        animateCollaborations();
+        $(window).scroll(animateCollaborations);
       });
     </script>
   </body>

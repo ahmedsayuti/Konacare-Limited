@@ -954,6 +954,118 @@
           font-size: 16px;
         }
       }
+      /* Partners/Logos Section */
+      .partners-section {
+        padding: 60px 0;
+        background-color: var(--light);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .partners-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      .partners-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(200px * 20); /* Double the width for seamless looping */
+      }
+
+      .partner-logo {
+        flex: 0 0 auto;
+        width: 180px;
+        height: 100px;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      .partner-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+
+      .partner-logo img {
+        max-width: 100%;
+        max-height: 80px;
+        object-fit: contain;
+      }
+
+      .partners-container:hover .partners-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(
+            calc(-200px * 10)
+          ); /* Move by half the total width */
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .partner-logo {
+          width: 140px;
+          height: 80px;
+          margin: 0 15px;
+        }
+
+        .partners-track {
+          animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-170px * 10));
+          }
+        }
+      }
+      .partners-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(220px * 20); /* Adjusted for proper logo width */
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(
+            calc(-220px * 10)
+          ); /* Move by half the total width */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .partners-track {
+          animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-170px * 10));
+          }
+        }
+      }
     </style>
   </head>
   <body>
@@ -1406,10 +1518,7 @@
               </div>
               <div>
                 <h3>Location</h3>
-                <p>
-                  H/No. B489/14 Kaneshie First light, Afadjato Close - Accra,
-                  Accra, Ghana
-                </p>
+                <p>Tebibiano - Tse Addo, Accra, Ghana</p>
               </div>
             </div>
 
@@ -1430,8 +1539,7 @@
               </div>
               <div>
                 <h3>Email</h3>
-                <p>info@konacarelimited.com</p>
-                <p>sales@konacarelimited.com</p>
+                <p>konacareghanaltd@gmail.com</p>
               </div>
             </div>
           </div>
@@ -1639,6 +1747,131 @@
         </div>
       </div>
     </section>
+    <!-- Add this section after the About section and before the Products section -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our International Collaborations</h2>
+          <p>Partnering with global leaders in healthcare innovation</p>
+        </div>
+
+        <div class="partners-container">
+          <div class="partners-track">
+            <!-- First set of 10 logos -->
+            <div class="partner-logo">
+              <img
+                src="images/international/gangotri_organics.png"
+                alt="Gangotri Organics"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/senera_essentials.png"
+                alt="Senera Essentials"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/bio_mileager.png"
+                alt="Bio Mileager"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/radhe_gopal_industries.png"
+                alt="Radhe Gopal Industries"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/connote_healthcare.png"
+                alt="Connote Healthcare"
+              />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/yasee.png" alt="Yasee" />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/c&i.png" alt="C&I" />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/uniko_india.png"
+                alt="Uniko India"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/gemini_uae.png"
+                alt="Gemini International UAE"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/curacel_claims.png"
+                alt="Curacel Claims"
+              />
+            </div>
+
+            <!-- Duplicate set for seamless looping -->
+            <div class="partner-logo">
+              <img
+                src="images/international/gangotri_organics.png"
+                alt="Gangotri Organics"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/senera_essentials.png"
+                alt="Senera Essentials"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/bio_mileager.png"
+                alt="Bio Mileager"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/radhe_gopal_industries.png"
+                alt="Radhe Gopal Industries"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/connote_healthcare.png"
+                alt="Connote Healthcare"
+              />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/yasee.png" alt="Yasee" />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/c&i.png" alt="C&I" />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/uniko_india.png"
+                alt="Uniko India"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/gemini_uae.png"
+                alt="Gemini International UAE"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/curacel_claims.png"
+                alt="Curacel Claims"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -1669,7 +1902,7 @@
                 rel="noopener noreferrer"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="#"
+              <a href="https://www.linkedin.com/in/konacare-limited-58365228b/"
                 ><i
                   class="fab fa-linkedin-in"
                   target="_blank"
