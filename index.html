@@ -1066,6 +1066,104 @@
           }
         }
       }
+            /* NEW STYLES ADDED FOR THE ABOUT SECTION TABS */
+      .about-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .about-tab {
+        padding: 12px 25px;
+        background-color: var(--light);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .about-tab.active {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .about-tab-content {
+        display: none;
+      }
+
+      .about-tab-content.active {
+        display: block;
+      }
+
+      .about-detail-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-detail-image {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-detail-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s;
+      }
+
+      .about-detail-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .about-detail-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .about-detail-text p {
+        margin-bottom: 15px;
+        color: var(--dark);
+      }
+
+      .about-features {
+        margin: 25px 0;
+      }
+
+      .about-feature {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .about-feature i {
+        color: var(--primary);
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+
+      /* Responsive adjustments for the new about section */
+      @media (max-width: 992px) {
+        .about-detail-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-tabs {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -1315,7 +1413,7 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - UPDATED WITH TAB STRUCTURE -->
     <section class="section about" id="about">
       <div class="container">
         <div class="section-title">
@@ -1323,75 +1421,164 @@
           <p>Your trusted partner in healthcare</p>
         </div>
 
-        <div class="about-content">
-          <div class="about-image">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1682145288913-979906a9ebc8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Konacare Team"
-            />
+        <div class="about-tabs">
+          <div class="about-tab active" data-tab="overview">Overview</div>
+          <div class="about-tab" data-tab="vision-mission">
+            Vision & Mission
           </div>
-          <div class="about-text">
-            <h3>Leading Healthcare Supplier in Ghana</h3>
-            <p>
-              Konacare Ghana Limited was established in May 2023 as a premier
-              supplier of medical equipment, medical devices, and healthcare
-              products in Ghana. We have rapidly established ourselves as a
-              trusted partner for hospitals, clinics, and healthcare providers
-              across the country.
-            </p>
+          <div class="about-tab" data-tab="core-values">Core Values</div>
+        </div>
 
-            <h4>Our Vision</h4>
-            <p>
-              To be Ghana's most trusted partner in advancing healthcare
-              delivery by providing innovative medical solutions, high-quality
-              products, and sustainable partnerships that improve lives and
-              communities.
-            </p>
+        <div class="about-tab-content active" id="overview">
+          <div class="about-detail-content">
+            <div class="about-detail-image">
+              <img
+                src="https://images.unsplash.com/photo-1630128295920-627fb9aff5a4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Konacare Team"
+              />
+            </div>
+            <div class="about-detail-text">
+              <h3>Leading Healthcare Supplier in Ghana</h3>
+              <p>
+                Konacare Ghana Limited was established in May 2023 as a premier
+                supplier of medical equipment, medical devices, and healthcare
+                products in Ghana. We have rapidly established ourselves as a
+                trusted partner for hospitals, clinics, and healthcare providers
+                across the country.
+              </p>
 
-            <h4>Our Mission</h4>
-            <p>
-              We exist to make healthcare accessible, reliable, and affordable
-              by supplying quality medical equipment, devices, consumables,
-              food, cosmetics, and herbal products. Through strategic
-              partnerships and revenue-sharing models, we empower hospitals and
-              health facilities to deliver better care while ensuring long-term
-              value for stakeholders.
-            </p>
+              <div class="about-features">
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Premier supplier of medical equipment and devices</span>
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Trusted partner for healthcare providers nationwide</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Comprehensive range of healthcare products</span>
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Commitment to quality and excellence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <h4>Our Core Values</h4>
-            <ul style="margin-left: 20px; margin-bottom: 20px">
-              <li>
-                <strong>Integrity</strong> – We act with honesty and fairness in
-                all business dealings.
-              </li>
-              <li>
-                <strong>Quality & Excellence</strong> – We provide only safe,
-                effective, and reliable products and services.
-              </li>
-              <li>
-                <strong>Innovation</strong> – We embrace creativity and
-                technology to transform healthcare delivery.
-              </li>
-              <li>
-                <strong>Partnership</strong> – We believe in win–win
-                collaborations with hospitals, suppliers, and communities.
-              </li>
-              <li>
-                <strong>Sustainability</strong> – We promote responsible
-                practices for long-term health and environmental impact.
-              </li>
-              <li>
-                <strong>Customer Focus</strong> – We prioritize client needs and
-                satisfaction in every engagement.
-              </li>
-              <li>
-                <strong>Accountability</strong> – We take responsibility for our
-                actions and outcomes.
-              </li>
-            </ul>
+        <div class="about-tab-content" id="vision-mission">
+          <div class="about-detail-content">
+            <div class="about-detail-image">
+              <img
+                src="https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Vision and Mission"
+              />
+            </div>
+            <div class="about-detail-text">
+              <h3>Our Vision & Mission</h3>
+
+              <h4>Our Vision</h4>
+              <p>
+                To be Ghana's most trusted partner in advancing healthcare
+                delivery by providing innovative medical solutions, high-quality
+                products, and sustainable partnerships that improve lives and
+                communities.
+              </p>
+
+              <h4>Our Mission</h4>
+              <p>
+                We exist to make healthcare accessible, reliable, and affordable
+                by supplying quality medical equipment, devices, consumables,
+                food, cosmetics, and herbal products. Through strategic
+                partnerships and revenue-sharing models, we empower hospitals
+                and health facilities to deliver better care while ensuring
+                long-term value for stakeholders.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-tab-content" id="core-values">
+          <div class="about-detail-content">
+            <div class="about-detail-image">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Core Values"
+              />
+            </div>
+            <div class="about-detail-text">
+              <h3>Our Core Values</h3>
+              <p>
+                Our operations are guided by a set of core values that define
+                who we are and how we serve our clients.
+              </p>
+
+              <div class="about-features">
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Integrity</strong> – We act with honesty and
+                    fairness in all business dealings.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Quality & Excellence</strong> – We provide only
+                    safe, effective, and reliable products and services.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Innovation</strong> – We embrace creativity and
+                    technology to transform healthcare delivery.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Partnership</strong> – We believe in win–win
+                    collaborations with hospitals, suppliers, and
+                    communities.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Sustainability</strong> – We promote responsible
+                    practices for long-term health and environmental
+                    impact.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Customer Focus</strong> – We prioritize client
+                    needs and satisfaction in every engagement.</span
+                  >
+                </div>
+                <div class="about-feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><strong>Accountability</strong> – We take responsibility
+                    for our actions and outcomes.</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <br>
+        <div class="view-all-container">
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
     </section>
 
     <!-- Products Section -->
@@ -2252,6 +2439,26 @@
 
         // Initialize the slider position
         updateBlogSliderPosition();
+      });
+            // NEW JAVASCRIPT FOR ABOUT SECTION TABS
+      $(document).ready(function () {
+        // About section tabs functionality
+        const aboutTabs = $(".about-tab");
+        const aboutTabContents = $(".about-tab-content");
+
+        aboutTabs.each(function () {
+          $(this).on("click", function () {
+            const tabId = $(this).data("tab");
+
+            // Remove active class from all tabs and contents
+            aboutTabs.removeClass("active");
+            aboutTabContents.removeClass("active");
+
+            // Add active class to clicked tab and corresponding content
+            $(this).addClass("active");
+            $("#" + tabId).addClass("active");
+          });
+        });
       });
     </script>
   </body>
