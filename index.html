@@ -2057,6 +2057,10 @@
             </div>
           </div>
         </div>
+        <br>
+        <div class="view-all-container">
+          <a href="about.html#collaborations" class="btn">See Collaborations</a>
+        </div>
       </section>
 
     <!-- Footer -->
@@ -2171,13 +2175,21 @@
 
         // Smooth scrolling for navigation links
         $('a[href*="#"]').on("click", function (e) {
-          if ($(this).attr("href") === "#") return;
-
+          // Don't interfere with external links or empty hashes
+          if ($(this).attr("href") === "#" || $(this).attr("href").indexOf("#") === -1) return;
+          
+          // Check if the link is to the same page
+          var isSamePage = this.pathname === window.location.pathname;
+          var hash = this.hash;
+          
+          // If it's a different page, let the browser handle the navigation normally
+          if (!isSamePage) return;
+          
           e.preventDefault();
-
+          
           $("html, body").animate(
             {
-              scrollTop: $($(this).attr("href")).offset().top - 80,
+              scrollTop: $(hash).offset().top - 80,
             },
             500,
             "linear"

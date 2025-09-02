@@ -1368,7 +1368,7 @@
       </div>
     </section>
     <!-- Add this section after the Timeline section and before the Team section -->
-    <section class="section collaborations-section">
+    <section id="collaborations" class="section collaborations-section">
       <div class="container">
         <div class="section-title">
           <h2>Our International Collaborations</h2>
@@ -1852,6 +1852,23 @@
       $(document).ready(function () {
         animateCollaborations();
         $(window).scroll(animateCollaborations);
+      });
+      // Handle hash on page load for direct navigation to sections
+      $(document).ready(function () {
+        if (window.location.hash) {
+          // Wait a bit for the page to fully render
+          setTimeout(function () {
+            var target = $(window.location.hash);
+            if (target.length) {
+              $("html, body").animate(
+                {
+                  scrollTop: target.offset().top - 80,
+                },
+                500
+              );
+            }
+          }, 100);
+        }
       });
     </script>
   </body>
