@@ -3,14 +3,1092 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Konacare Ghana Limited - Quality Healthcare Solutions" />
+    <meta
+      property="og:description"
+      content="Konacare Ghana Limited provides premium medical equipment, medical devices, herbal products, cosmetics, and healthcare solutions to healthcare providers across Ghana since 2023."
+    />
+    <meta property="og:image" content="images/linkimage.png" />
+    <meta
+      property="og:url"
+      content="https://ahmedsayuti.github.io/Konacare-Limited"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Konacare Ghana Limited - Leading Healthcare Supplier in Ghana"
+    />
+    <meta
+      name="twitter:description"
+      content="Premier supplier of medical equipment, devices, herbal medicine, cosmetics and healthcare products in Ghana"
+    />
+    <meta name="twitter:image" content="images/linkimage.png" />
     <title>Konacare Ghana Limited</title>
-    <!-- Favicon and other meta tags remain the same -->
-    <!-- ... (all existing head content remains unchanged) ... -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-144x144.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#7ed321" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#7ed321" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       /* All existing CSS styles remain exactly the same */
-      /* ... (all existing CSS remains unchanged) ... */
+      :root {
+        --primary: #ef5a84;
+        --secondary: #004d99;
+        --accent: #00a651;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
 
-      /* NEW STYLES ADDED FOR THE ABOUT SECTION TABS */
+      * {
+        margin: initial;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Hero Slider Section */
+      .hero-slider {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slide.active {
+        opacity: 1;
+      }
+
+      .slide::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .slide-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .slide-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-news {
+        background-color: var(--accent);
+      }
+
+      .btn-news:hover {
+        background-color: #008c44;
+      }
+
+      .slider-nav {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 3;
+      }
+
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .slider-dot.active {
+        background: white;
+      }
+
+      .slider-arrows {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        z-index: 3;
+        transform: translateY(-50%);
+      }
+
+      .arrow {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .arrow:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Services Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        background-color: var(--primary);
+        color: white;
+        font-size: 2.5rem;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .service-content {
+        padding: 25px;
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--light);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      /* Products Section */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.1);
+      }
+
+      .product-content {
+        padding: 20px;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: var(--light);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        background-color: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+      .fa-spinner {
+        margin-right: 8px;
+      }
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .about-image,
+        .about-text {
+          flex: none;
+          width: 100%;
+        }
+
+        .slide-content h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -33.33%; /* Start off-screen to the right */
+          width: 33.33%; /* One third of the screen */
+          height: 100vh;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-menu a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .hero-slider {
+          margin-top: 70px;
+        }
+
+        .slide-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .slide-content p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          display: block;
+          margin: 10px auto;
+          width: 80%;
+        }
+
+        .arrow {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+
+        .slider-nav {
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slide-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .slide-content p {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .nav-menu {
+          width: 40%; /* On very small screens, use 80% width */
+          right: -80%;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+
+      /* Form Popup Styles */
+      .form-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .form-popup {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .form-popup-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .form-popup-content p {
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .popup-close {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .popup-close:hover {
+        background-color: var(--secondary);
+      }
+      /* Add this CSS to your existing style section */
+      .form-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .form-popup {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .form-popup-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .form-popup-content p {
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .popup-close {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .popup-close:hover {
+        background-color: var(--secondary);
+      }
+
+      /* Blog Section Styles */
+      .blog {
+        background-color: var(--light);
+      }
+
+      .blog-slider-container {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+
+      .blog-slider {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .blog-post {
+        flex: 0 0 calc(33.333% - 20px);
+        margin: 0 10px;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .blog-post:hover {
+        transform: translateY(-5px);
+      }
+
+      .blog-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .blog-post:hover .blog-image img {
+        transform: scale(1.05);
+      }
+
+      .blog-content {
+        padding: 25px;
+      }
+
+      .blog-date {
+        color: var(--gray);
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .blog-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--dark);
+        line-height: 1.4;
+      }
+
+      .blog-content p {
+        margin-bottom: 20px;
+        color: var(--gray);
+      }
+
+      .blog-arrows {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        z-index: 3;
+        transform: translateY(-50%);
+      }
+
+      .blog-arrow {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background 0.3s;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-arrow:hover {
+        background: var(--secondary);
+      }
+
+      .blog-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .blog-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .blog-dot.active {
+        background: var(--primary);
+      }
+
+      .view-all-container {
+        text-align: center;
+      }
+
+      /* Responsive Styles for Blog */
+      @media (max-width: 992px) {
+        .blog-post {
+          flex: 0 0 calc(50% - 20px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .blog-post {
+          flex: 0 0 calc(100% - 20px);
+        }
+
+        .blog-arrow {
+          width: 35px;
+          height: 35px;
+          font-size: 16px;
+        }
+      }
+      /* Partners/Logos Section */
+      .partners-section {
+        padding: 60px 0;
+        background-color: var(--light);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .partners-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      .partners-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(200px * 20); /* Double the width for seamless looping */
+      }
+
+      .partner-logo {
+        flex: 0 0 auto;
+        width: 180px;
+        height: 100px;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      .partner-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+
+      .partner-logo img {
+        max-width: 100%;
+        max-height: 80px;
+        object-fit: contain;
+      }
+
+      .partners-container:hover .partners-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(
+            calc(-200px * 10)
+          ); /* Move by half the total width */
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .partner-logo {
+          width: 140px;
+          height: 80px;
+          margin: 0 15px;
+        }
+
+        .partners-track {
+          animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-170px * 10));
+          }
+        }
+      }
+      .partners-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(220px * 20); /* Adjusted for proper logo width */
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(
+            calc(-220px * 10)
+          ); /* Move by half the total width */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .partners-track {
+          animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-170px * 10));
+          }
+        }
+      }
+            /* NEW STYLES ADDED FOR THE ABOUT SECTION TABS */
       .about-tabs {
         display: flex;
         justify-content: center;
@@ -107,11 +1185,255 @@
           align-items: center;
         }
       }
+
     </style>
   </head>
   <body>
-    <!-- Header and other sections remain unchanged -->
-    <!-- ... (all existing HTML remains unchanged until the About section) ... -->
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Konacare Logo" />
+          </a>
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="home">
+      <!-- Slide 1 -->
+      <div
+        class="slide active"
+        style="
+          background-image: url('https://plus.unsplash.com/premium_photo-1682145288913-979906a9ebc8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+      >
+        <div class="slide-content">
+          <h1>Quality Healthcare Solutions for Ghana</h1>
+          <p>
+            Konacare Ghana Limited provides premium medical equipment and
+            healthcare products to healthcare providers across Ghana.
+          </p>
+          <a href="news.html" class="btn">Latest News</a>
+          <a href="services.html" class="btn btn-news">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1641877492086-771bc14a8e5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fE1lZGljYWwlMjBFcXVpcG1lbnR8ZW58MHx8MHx8fDA%3D');
+        "
+      >
+        <div class="slide-content">
+          <h1>Advanced Medical Equipment</h1>
+          <p>
+            We supply state-of-the-art medical equipment from world-leading
+            manufacturers to healthcare facilities nationwide.
+          </p>
+          <a href="news.html" class="btn">Industry News</a>
+          <a href="products.html" class="btn btn-news">Our Products</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Comprehensive Healthcare Products</h1>
+          <p>
+            From medical disposables to herbal products, we offer a wide range
+            of healthcare solutions for all needs.
+          </p>
+          <a href="news.html" class="btn">Healthcare News</a>
+          <a href="about.html" class="btn btn-news">About Us</a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Innovative Medical Devices</h1>
+          <p>
+            Discover our range of cutting-edge medical devices designed to
+            improve patient outcomes.
+          </p>
+          <a href="news.html" class="btn">Device News</a>
+          <a href="products.html" class="btn btn-news">View Products</a>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Herbal Medicine & Cosmetics</h1>
+          <p>
+            Quality herbal medicines and cosmetic products for holistic health
+            and wellness.
+          </p>
+          <a href="news.html" class="btn">Wellness News</a>
+          <a href="products.html" class="btn btn-news">Explore Products</a>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1>Food Products & General Merchandise</h1>
+          <p>
+            We import and distribute quality food products and general
+            merchandise to meet diverse consumer needs.
+          </p>
+          <a href="news.html" class="btn">Product News</a>
+          <a href="products.html" class="btn btn-news">Our Offerings</a>
+        </div>
+      </div>
+
+      <!-- Slider Navigation -->
+      <div class="slider-nav">
+        <div class="slider-dot active" data-slide="0"></div>
+        <div class="slider-dot" data-slide="1"></div>
+        <div class="slider-dot" data-slide="2"></div>
+        <div class="slider-dot" data-slide="3"></div>
+        <div class="slider-dot" data-slide="4"></div>
+        <div class="slider-dot" data-slide="5"></div>
+      </div>
+
+      <!-- Slider Arrows -->
+      <div class="slider-arrows">
+        <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
+        <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>Comprehensive healthcare solutions tailored to your needs</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <div class="service-content">
+              <h3>Medical Equipment & Devices</h3>
+              <p>
+                We supply state-of-the-art medical equipment and innovative
+                medical devices for hospitals, clinics, and healthcare
+                facilities across Ghana.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-box-open"></i>
+            </div>
+            <div class="service-content">
+              <h3>Medical Disposables & Consumables</h3>
+              <p>
+                High-quality medical disposables and consumables to ensure
+                hygiene, safety, and efficiency in healthcare delivery.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="service-content">
+              <h3>Herbal Medicine & Products</h3>
+              <p>
+                Wholesale and retail of authentic herbal medicine and herbal
+                products, combining traditional wisdom with modern quality
+                standards.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-pump-soap"></i>
+            </div>
+            <div class="service-content">
+              <h3>Cosmetics & Personal Care</h3>
+              <p>
+                Premium quality cosmetics and personal care products to enhance
+                beauty and wellness for our customers.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="service-content">
+              <h3>Food Products</h3>
+              <p>
+                Nutritious and high-quality food products to support health and
+                wellbeing for individuals and families.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="service-content">
+              <h3>Importation & General Merchandise</h3>
+              <p>
+                Reliable importation services and distribution of general
+                merchandise to meet diverse market needs across Ghana.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- About Section - UPDATED WITH TAB STRUCTURE -->
     <section class="section about" id="about">
@@ -133,7 +1455,7 @@
           <div class="about-detail-content">
             <div class="about-detail-image">
               <img
-                src="https://plus.unsplash.com/premium_photo-1682145288913-979906a9ebc8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1630128295920-627fb9aff5a4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Konacare Team"
               />
             </div>
@@ -175,7 +1497,7 @@
           <div class="about-detail-content">
             <div class="about-detail-image">
               <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Vision and Mission"
               />
             </div>
@@ -207,7 +1529,7 @@
           <div class="about-detail-content">
             <div class="about-detail-image">
               <img
-                src="https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Core Values"
               />
             </div>
@@ -275,16 +1597,884 @@
           </div>
         </div>
       </div>
+      <br>
+        <div class="view-all-container">
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
     </section>
 
-    <!-- The rest of the page remains unchanged -->
-    <!-- ... (all existing HTML after the About section remains unchanged) ... -->
+    <!-- Products Section -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Products</h2>
+          <p>Quality healthcare products from trusted sources</p>
+        </div>
 
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1700832082152-0416a3ee5e60?q=80&w=873&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Equipment"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Medical Equipment</h3>
+              <p>
+                From diagnostic tools to surgical instruments, we supply
+                high-quality medical equipment for healthcare facilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Devices"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Medical Devices</h3>
+              <p>
+                Innovative medical devices that improve patient care and
+                treatment outcomes in clinical settings.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1599814516324-66aa0bf16425?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Consumables"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Medical Consumables</h3>
+              <p>
+                High-quality medical disposables and consumables to ensure
+                safety and hygiene in healthcare environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1661379160215-c2a0ac773016?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Herbal Products"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Herbal Medicine & Products</h3>
+              <p>
+                Authentic herbal medicines and products that combine traditional
+                wisdom with modern quality standards.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                alt="Cosmetics"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Cosmetics & Personal Care</h3>
+              <p>
+                Premium quality cosmetics and personal care products for beauty
+                and wellness enhancement.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Food Products"
+              />
+            </div>
+            <div class="product-content">
+              <h3>Food Products</h3>
+              <p>
+                Nutritious and high-quality food products to support health and
+                wellbeing for all consumers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us for all your healthcare needs</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h3>Location</h3>
+                <p>Tebibiano - Tse Addo, Accra, Ghana</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h3>Phone</h3>
+                <p>+233 20 181 8195</p>
+                <p>+233 54 152 1002</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>konacareghanaltd@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/mvgakjww"
+              method="POST"
+            >
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="_subject"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog Section -->
+    <section class="section blog" id="blog">
+      <div class="container">
+        <div class="section-title">
+          <h2>Latest News & Articles</h2>
+          <p>Stay updated with the latest healthcare insights from Konacare</p>
+        </div>
+
+        <div class="blog-slider-container">
+          <div class="blog-slider">
+            <!-- Blog Post 1 -->
+            <div class="blog-post">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Pharmaceutical Innovations"
+                />
+              </div>
+              <div class="blog-content">
+                <span class="blog-date">March 15, 2025</span>
+                <h3>Latest Innovations in Pharmaceutical Delivery Systems</h3>
+                <p>
+                  Discover how new drug delivery technologies are
+                  revolutionizing patient care and treatment outcomes across
+                  Ghana's healthcare sector...
+                </p>
+                <a href="blog/pharmaceutical-innovations.html" class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-post">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+                  alt="Medical Equipment"
+                />
+              </div>
+              <div class="blog-content">
+                <span class="blog-date">March 10, 2025</span>
+                <h3>Essential Medical Equipment for Modern Clinics</h3>
+                <p>
+                  Learn about the must-have medical equipment that every modern
+                  healthcare facility in Ghana should consider to enhance
+                  patient care...
+                </p>
+                <a href="blog/essential-medical-equipment.html" class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  alt="Healthcare Trends"
+                />
+              </div>
+              <div class="blog-content">
+                <span class="blog-date">March 5, 2025</span>
+                <h3>Emerging Healthcare Trends in West Africa</h3>
+                <p>
+                  Explore the latest developments and trends shaping the future
+                  of healthcare delivery across West Africa and how Konacare is
+                  responding...
+                </p>
+                <a href="blog/healthcare-trends-west-africa.html" class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="blog-post">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80"
+                  alt="Medical Training"
+                />
+              </div>
+              <div class="blog-content">
+                <span class="blog-date">February 28, 2025</span>
+                <h3>Importance of Continuous Medical Training</h3>
+                <p>
+                  Why ongoing education and training for healthcare
+                  professionals is critical for maintaining high standards of
+                  patient care in Ghana...
+                </p>
+                <a href="blog/continuous-medical-training.html" class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="blog-post">
+              <div class="blog-image">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1683134696709-fd1657ea616b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Medical Technology"
+                />
+              </div>
+              <div class="blog-content">
+                <span class="blog-date">February 22, 2025</span>
+                <h3>Advancements in Diagnostic Technology</h3>
+                <p>
+                  How cutting-edge diagnostic equipment is improving early
+                  detection and treatment outcomes for patients throughout
+                  Ghana...
+                </p>
+                <a
+                  href="blog/diagnostic-technology-advancements.html"
+                  class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Slider Navigation -->
+          <div class="blog-arrows">
+            <div class="blog-arrow blog-prev">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="blog-arrow blog-next">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+
+          <div class="blog-dots">
+            <div class="blog-dot active" data-slide="0"></div>
+            <div class="blog-dot" data-slide="1"></div>
+            <div class="blog-dot" data-slide="2"></div>
+            <div class="blog-dot" data-slide="3"></div>
+            <div class="blog-dot" data-slide="4"></div>
+          </div>
+        </div>
+
+        <div class="view-all-container">
+          <a href="news.html" class="btn">View All Articles</a>
+        </div>
+      </div>
+    </section>
+    <!-- Add this section after the About section and before the Products section -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our International Collaborations</h2>
+          <p>Partnering with global leaders in healthcare innovation</p>
+        </div>
+
+        <div class="partners-container">
+          <div class="partners-track">
+            <!-- First set of 10 logos -->
+            <div class="partner-logo">
+              <img
+                src="images/international/gangotri_organics.png"
+                alt="Gangotri Organics"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/senera_essentials.png"
+                alt="Senera Essentials"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/bio_mileager.png"
+                alt="Bio Mileager"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/radhe_gopal_industries.png"
+                alt="Radhe Gopal Industries"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/connote_healthcare.png"
+                alt="Connote Healthcare"
+              />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/yasee.png" alt="Yasee" />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/c&i.png" alt="C&I" />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/uniko_india.png"
+                alt="Uniko India"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/gemini_uae.png"
+                alt="Gemini International UAE"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/curacel_claims.png"
+                alt="Curacel Claims"
+              />
+            </div>
+
+            <!-- Duplicate set for seamless looping -->
+            <div class="partner-logo">
+              <img
+                src="images/international/gangotri_organics.png"
+                alt="Gangotri Organics"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/senera_essentials.png"
+                alt="Senera Essentials"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/bio_mileager.png"
+                alt="Bio Mileager"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/radhe_gopal_industries.png"
+                alt="Radhe Gopal Industries"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/connote_healthcare.png"
+                alt="Connote Healthcare"
+              />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/yasee.png" alt="Yasee" />
+            </div>
+            <div class="partner-logo">
+              <img src="images/international/c&i.png" alt="C&I" />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/uniko_india.png"
+                alt="Uniko India"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/gemini_uae.png"
+                alt="Gemini International UAE"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/international/curacel_claims.png"
+                alt="Curacel Claims"
+              />
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="view-all-container">
+          <a href="about.html#collaborations" class="btn">See Collaborations</a>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Konacare Ghana Limited</div>
+            <p>
+              Konacare Ghana Limited is a leading supplier of medical equipment
+              and medical devices in Ghana.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://web.facebook.com/Konacarelimited/?_rdc=1&_rdr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i
+                  class="fab fa-twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/konacarelimited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/konacare-limited-58365228b/"
+                ><i
+                  class="fab fa-linkedin-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html">Medical Equipment</a></li>
+              <li><a href="services.html">Medical Devices</a></li>
+              <li><a href="services.html">Medical Consumables</a></li>
+              <li><a href="services.html">Herbal Products</a></li>
+              <li><a href="services.html">Cosmetics</a></li>
+              <li><a href="services.html">Food Products</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get updates on our products and
+              services.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Konacare Ghana Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery and Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      // All existing JavaScript remains the same
-      // ... (all existing JavaScript remains unchanged) ...
+      $(document).ready(function () {
+        // Mobile menu toggle
+        $(".mobile-toggle").click(function (e) {
+          e.stopPropagation();
+          $(".nav-menu").toggleClass("active");
+          $(".overlay").toggleClass("active");
+        });
 
-      // NEW JAVASCRIPT FOR ABOUT SECTION TABS
+        // Close menu when clicking on overlay
+        $(".overlay").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Close menu when clicking on a link
+        $(".nav-menu a").click(function () {
+          $(".nav-menu").removeClass("active");
+          $(".overlay").removeClass("active");
+        });
+
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on("click", function (e) {
+          // Don't interfere with external links or empty hashes
+          if ($(this).attr("href") === "#" || $(this).attr("href").indexOf("#") === -1) return;
+          
+          // Check if the link is to the same page
+          var isSamePage = this.pathname === window.location.pathname;
+          var hash = this.hash;
+          
+          // If it's a different page, let the browser handle the navigation normally
+          if (!isSamePage) return;
+          
+          e.preventDefault();
+          
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top - 80,
+            },
+            500,
+            "linear"
+          );
+        });
+
+        // Hero Slider functionality
+        let currentSlide = 0;
+        const slides = $(".slide");
+        const dots = $(".slider-dot");
+        const totalSlides = slides.length;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+          // Remove active class from all slides and dots
+          slides.removeClass("active");
+          dots.removeClass("active");
+
+          // Add active class to current slide and dot
+          slides.eq(index).addClass("active");
+          dots.eq(index).addClass("active");
+
+          currentSlide = index;
+        }
+
+        // Next slide function
+        function nextSlide() {
+          let next = currentSlide + 1;
+          if (next >= totalSlides) {
+            next = 0;
+          }
+          showSlide(next);
+        }
+
+        // Auto advance slides
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Click on dots
+        dots.on("click", function () {
+          clearInterval(slideInterval);
+          let slideIndex = $(this).data("slide");
+          showSlide(slideIndex);
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Click on arrows
+        $(".arrow.next").on("click", function () {
+          clearInterval(slideInterval);
+          nextSlide();
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        $(".arrow.prev").on("click", function () {
+          clearInterval(slideInterval);
+          let prev = currentSlide - 1;
+          if (prev < 0) {
+            prev = totalSlides - 1;
+          }
+          showSlide(prev);
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Pause slider on hover
+        $(".hero-slider").hover(
+          function () {
+            clearInterval(slideInterval);
+          },
+          function () {
+            slideInterval = setInterval(nextSlide, 5000);
+          }
+        );
+
+        // Form submission
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault();
+          var form = $(this);
+          var submitBtn = form.find('button[type="submit"]');
+
+          // Show loading state
+          var originalText = submitBtn.html();
+          submitBtn
+            .html('<i class="fas fa-spinner fa-spin"></i> Sending...')
+            .prop("disabled", true);
+
+          // Create FormData object
+          var formData = new FormData();
+          formData.append("name", $("#name").val());
+          formData.append("email", $("#email").val());
+          formData.append("_subject", $("#subject").val());
+          formData.append("message", $("#message").val());
+
+          // Add Formspree-specific fields
+          formData.append("_format", "plain");
+          formData.append("_replyto", $("#email").val());
+          formData.append("_next", window.location.href);
+
+          // Submit the form to Formspree using fetch API
+          fetch(form.attr("action"), {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                // Show success popup
+                $("body").append(`
+                <div class="form-popup-overlay">
+                  <div class="form-popup">
+                    <div class="form-popup-content">
+                      <h3>Thank You for Your Message!</h3>
+                      <p>We have received your inquiry and the Konacare team will reply to you shortly.</p>
+                      <button class="btn popup-close">OK</button>
+                    </div>
+                  </div>
+                </div>
+              `);
+                form.trigger("reset");
+              } else {
+                throw new Error("Form submission failed");
+              }
+            })
+            .catch((error) => {
+              // Show error popup
+              $("body").append(`
+              <div class="form-popup-overlay">
+                <div class="form-popup">
+                  <div class="form-popup-content">
+                    <h3>Submission Error</h3>
+                    <p>Sorry, there was a problem sending your message. Please try again or contact us directly at info@konacarelimited.com.</p>
+                    <button class="btn popup-close">OK</button>
+                  </div>
+                </div>
+              </div>
+            `);
+            })
+            .finally(() => {
+              // Reset button state
+              submitBtn.html(originalText).prop("disabled", false);
+            });
+        });
+        // Close the popup when clicked
+        $(document).on(
+          "click",
+          ".popup-close, .form-popup-overlay",
+          function () {
+            $(".form-popup-overlay").remove();
+          }
+        );
+
+        // Animation on scroll
+        function animateOnScroll() {
+          $(".service-card, .product-card").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (scroll + windowHeight - 100 > position) {
+              $(this).addClass("animated");
+            }
+          });
+        }
+
+        // Run on load and scroll
+        animateOnScroll();
+        $(window).scroll(animateOnScroll);
+      });
+
+      $(document).ready(function () {
+        // Blog Slider functionality
+        let currentBlogSlide = 0;
+        const blogPosts = $(".blog-post");
+        const blogDots = $(".blog-dot");
+        const totalBlogSlides = blogPosts.length;
+        let slidesToShow = 3; // Default for large screens
+
+        // Function to determine how many slides to show based on screen width
+        function getSlidesToShow() {
+          if ($(window).width() < 768) {
+            return 1;
+          } else if ($(window).width() < 992) {
+            return 2;
+          } else {
+            return 3;
+          }
+        }
+
+        // Initialize slides to show
+        slidesToShow = getSlidesToShow();
+
+        // Update on window resize
+        $(window).resize(function () {
+          slidesToShow = getSlidesToShow();
+          updateBlogSliderPosition();
+        });
+
+        // Function to update blog slider position
+        function updateBlogSliderPosition() {
+          const translateValue = -currentBlogSlide * (100 / slidesToShow) + "%";
+          $(".blog-slider").css(
+            "transform",
+            "translateX(" + translateValue + ")"
+          );
+
+          // Update active dot
+          blogDots.removeClass("active");
+          blogDots.eq(currentBlogSlide).addClass("active");
+        }
+
+        // Next blog slide function
+        function nextBlogSlide() {
+          if (currentBlogSlide < totalBlogSlides - slidesToShow) {
+            currentBlogSlide++;
+          } else {
+            currentBlogSlide = 0; // Loop back to start
+          }
+          updateBlogSliderPosition();
+        }
+
+        // Auto advance blog slides
+        let blogSlideInterval = setInterval(nextBlogSlide, 4000);
+
+        // Click on blog dots
+        blogDots.on("click", function () {
+          clearInterval(blogSlideInterval);
+          currentBlogSlide = $(this).data("slide");
+          updateBlogSliderPosition();
+          blogSlideInterval = setInterval(nextBlogSlide, 4000);
+        });
+
+        // Click on blog arrows
+        $(".blog-next").on("click", function () {
+          clearInterval(blogSlideInterval);
+          nextBlogSlide();
+          blogSlideInterval = setInterval(nextBlogSlide, 4000);
+        });
+
+        $(".blog-prev").on("click", function () {
+          clearInterval(blogSlideInterval);
+          if (currentBlogSlide > 0) {
+            currentBlogSlide--;
+          } else {
+            currentBlogSlide = totalBlogSlides - slidesToShow; // Loop to end
+          }
+          updateBlogSliderPosition();
+          blogSlideInterval = setInterval(nextBlogSlide, 4000);
+        });
+
+        // Pause blog slider on hover
+        $(".blog-slider-container").hover(
+          function () {
+            clearInterval(blogSlideInterval);
+          },
+          function () {
+            blogSlideInterval = setInterval(nextBlogSlide, 4000);
+          }
+        );
+
+        // Initialize the slider position
+        updateBlogSliderPosition();
+      });
+            // NEW JAVASCRIPT FOR ABOUT SECTION TABS
       $(document).ready(function () {
         // About section tabs functionality
         const aboutTabs = $(".about-tab");
