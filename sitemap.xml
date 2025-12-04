@@ -1,151 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- Homepage -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- About Us Page -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/about.html</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Services Page -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/services.html</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Products Page -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/products.html</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Pharmaceutical Products -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/products/pharmaceuticals</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Medical Equipment -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/products/medical-equipment</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Medical Devices -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/products/medical-devices</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Healthcare Solutions -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/healthcare-solutions</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Consultancy Services -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/consultancy</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Partners & Suppliers -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/partners</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- News & Updates -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/news.html</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Contact Us Page -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/contact.html</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Careers Page -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/careers</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <!-- Privacy Policy -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/privacy-policy</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Terms of Service -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/terms-of-service</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Quality Assurance -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/quality-assurance</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Client Portal -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/client-portal</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Request Quote -->
-    <url>
-        <loc>https://ahmedsayuti.github.io/Konacare-Limited/request-quote</loc>
-        <lastmod>2024-08-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.konacareghltd.com/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.konacareghltd.com/about.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/products.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/news.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/contact.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog/News Articles -->
+  <url>
+    <loc>https://www.konacareghltd.com/blog/pharmaceutical-innovations.html</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/blog/essential-medical-equipment.html</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/blog/healthcare-trends-west-africa.html</loc>
+    <lastmod>2025-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/blog/continuous-medical-training.html</loc>
+    <lastmod>2025-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/blog/diagnostic-technology-advancements.html</loc>
+    <lastmod>2025-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Service Subpages -->
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#medical-equipment</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#medical-devices</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#medical-consumables</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#herbal-products</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#cosmetics</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/services.html#food-products</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Homepage Sections -->
+  <url>
+    <loc>https://www.konacareghltd.com/#services</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/#about</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/#products</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/#blog</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/#contact</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- About Section Tabs -->
+  <url>
+    <loc>https://www.konacareghltd.com/about.html#overview</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/about.html#vision-mission</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/about.html#core-values</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.konacareghltd.com/about.html#collaborations</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Social Media (Optional - include if you want search engines to know about them) -->
+  <url>
+    <loc>https://web.facebook.com/Konacarelimited/?_rdc=1&amp;_rdr</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.instagram.com/konacarelimited/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.linkedin.com/in/konacare-limited-58365228b/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
